@@ -12,7 +12,7 @@
   <% @question.answers.each do |answer| %>
   <div class="answer">
     <p class="answer-body"><%= answer.body %></p>
-    <p class="answer-user">Posted by <%#= answer.user.name %></p>
+    <p class="answer-user">Posted by <%= answer.user.name  unless answer.user.nil? %></p>
   </div>
   <% end %>
 </div>

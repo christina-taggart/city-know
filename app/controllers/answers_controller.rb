@@ -20,10 +20,12 @@ class AnswersController < ApplicationController
 
   def create
     authenticate_user!
+    @user = current_user
     @city = City.find(params[:city_id])
     @question = Question.find(params[:question_id])
     @answer = @question.answers.build(params[:answer])
     if @answer.save
+      @user.answers << @answer
       redirect_to city_question_path(@city, @question)
     else
       @errors = @city.errors.full_messages
