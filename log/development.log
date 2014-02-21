@@ -18792,3 +18792,331 @@ Served asset /wysiwyg.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 20:28:33 -0800
 Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/cities/1/questions/2/edit" for 127.0.0.1 at 2014-02-20 20:33:32 -0800
+Processing by QuestionsController#edit as HTML
+  Parameters: {"city_id"=>"1", "id"=>"2"}
+  Rendered questions/edit.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= form_for [@city, @question] do |f| %>
+    2: 	<%= f.label :title %>
+    3: 	<%= f.text_field :title %>
+    4: 
+  app/views/questions/edit.html.erb:1:in `_app_views_questions_edit_html_erb___74277804862050157_70206731993040'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.3ms)
+
+
+Started GET "/cities/1/questions/4/edit" for 127.0.0.1 at 2014-02-20 20:33:36 -0800
+Processing by QuestionsController#edit as HTML
+  Parameters: {"city_id"=>"1", "id"=>"4"}
+  Rendered questions/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= form_for [@city, @question] do |f| %>
+    2: 	<%= f.label :title %>
+    3: 	<%= f.text_field :title %>
+    4: 
+  app/views/questions/edit.html.erb:1:in `_app_views_questions_edit_html_erb___74277804862050157_70206731993040'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/cities/1/questions/2/edit" for 127.0.0.1 at 2014-02-20 20:33:39 -0800
+Processing by QuestionsController#edit as HTML
+  Parameters: {"city_id"=>"1", "id"=>"2"}
+  Rendered questions/edit.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= form_for [@city, @question] do |f| %>
+    2: 	<%= f.label :title %>
+    3: 	<%= f.text_field :title %>
+    4: 
+  app/views/questions/edit.html.erb:1:in `_app_views_questions_edit_html_erb___74277804862050157_70206731993040'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.5ms)
+
+
+Started GET "/cities/1/questions/6/edit" for 127.0.0.1 at 2014-02-20 20:33:42 -0800
+Processing by QuestionsController#edit as HTML
+  Parameters: {"city_id"=>"1", "id"=>"6"}
+  Rendered questions/edit.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= form_for [@city, @question] do |f| %>
+    2: 	<%= f.label :title %>
+    3: 	<%= f.text_field :title %>
+    4: 
+  app/views/questions/edit.html.erb:1:in `_app_views_questions_edit_html_erb___74277804862050157_70206731993040'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/cities/1/questions/1/edit" for 127.0.0.1 at 2014-02-20 20:33:44 -0800
+Processing by QuestionsController#edit as HTML
+  Parameters: {"city_id"=>"1", "id"=>"1"}
+  Rendered questions/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= form_for [@city, @question] do |f| %>
+    2: 	<%= f.label :title %>
+    3: 	<%= f.text_field :title %>
+    4: 
+  app/views/questions/edit.html.erb:1:in `_app_views_questions_edit_html_erb___74277804862050157_70206731993040'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.2ms)
+
+
+Started GET "/cities/1/questions/1/edit" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Processing by QuestionsController#edit as HTML
+  Parameters: {"city_id"=>"1", "id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered questions/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 83ms (Views: 60.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:19 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /jquery.validate.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /ladda.min.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /raphael.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /wysiwyg.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 20:34:20 -0800
+Served asset /application.js - 304 Not Modified (11ms)
