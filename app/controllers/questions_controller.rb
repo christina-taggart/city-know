@@ -16,8 +16,12 @@ class QuestionsController < ApplicationController
 	def create
 		@city = City.find(params[:city_id])
 		@question = @city.questions.build(params[:question])
-		@question.save
-		respond_with(@city, @question)
+		if @question.save
+			redirect_to city_path(@city)
+		else
+			flash.now[:errors] = @question.errors.full_messages
+			render :new
+		end
 	end
 
 	def show
