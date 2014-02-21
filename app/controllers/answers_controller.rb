@@ -1,4 +1,4 @@
-class CitiesController < ApplicationController
+class AnswersController < ApplicationController
   def index
     @question = Question.find(params[:question_id])
     @answers = @question.answers
@@ -9,6 +9,8 @@ class CitiesController < ApplicationController
   end
 
   def new
+    @city = City.find(params[:city_id])
+    @question = Question.find(params[:question_id])
     @answer = Answer.new
   end
 
@@ -25,6 +27,8 @@ class CitiesController < ApplicationController
   end
 
   def edit
+    @city = City.find(params[:city_id])
+    @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:question_id])
   end
 

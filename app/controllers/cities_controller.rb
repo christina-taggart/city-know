@@ -16,8 +16,8 @@ class CitiesController < ApplicationController
     if @city.save
       redirect_to city_path(@city)
     else
-      @errors = @city.errors.full_messages
-      render :new
+      flash.now[:errors] = @city.errors.full_messages
+      render action: 'new'
     end
   end
 
@@ -30,7 +30,8 @@ class CitiesController < ApplicationController
     if @city.update_attributes(params[:city])
       redirect_to city_path(@city)
     else
-      redirect_to edit_city_path(@city)
+      flash.now[:errors] = @city.errors.full_messages
+      render action: 'edit'
     end
   end
 
