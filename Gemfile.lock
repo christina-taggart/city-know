@@ -116,6 +116,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0.4)
+    shoulda-matchers (2.4.0)
+      activesupport (>= 3.0.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -151,4 +153,5 @@ DEPENDENCIES
   rails (= 3.2.13)
   rspec-rails (~> 2.0)
   selenium-webdriver
+  shoulda-matchers
   uglifier (>= 1.0.3)
