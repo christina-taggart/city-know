@@ -1,11 +1,11 @@
 development:
   adapter: postgresql
-  database: refactor_this_dev
+  database: cityknow_dev
   pool: 5
   timeout: 5000
 
 test:
   adapter: postgresql
-  database: refactor_this_test
+  database: cityknow_test
   pool: 5
   timeout: 5000
