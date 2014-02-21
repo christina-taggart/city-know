@@ -535,3 +535,3916 @@ Migrating to CreateCities (20140221005941)
   [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221005941')
   [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
   [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (115.6ms)[0m  DROP DATABASE IF EXISTS "cityknow_test"
+  [1m[36m (306.4ms)[0m  [1mCREATE DATABASE "cityknow_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.3ms)[0m  CREATE TABLE "cities" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140221005941')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140221002329')
+Connecting to database specified by database.yml
+
+
+Started GET "/cities" for 127.0.0.1 at 2014-02-20 17:44:19 -0800
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered cities/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 65ms (Views: 24.0ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 17:44:19 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 17:44:19 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 17:44:19 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 17:44:19 -0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 17:44:26 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 17:44:26 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 17:44:26 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 17:44:26 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 17:44:26 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2014-02-20 18:03:20 -0800
+
+SyntaxError (/Users/apprentice/cityknow/app/controllers/cities_controller.rb:41: syntax error, unexpected $end, expecting keyword_end):
+  activesupport (3.2.13) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__3997271117645948258__call__1837510439698277411__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.8ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2014-02-20 18:03:29 -0800
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" 
+  Rendered cities/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 11ms (Views: 3.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:03:29 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:03:30 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:03:30 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:03:30 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at 2014-02-20 18:03:33 -0800
+Processing by CitiesController#new as HTML
+  Rendered cities/new.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 37ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:03:33 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:03:33 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:03:33 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:03:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:03:47 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"Berkeley, CA", "description"=>"Hippies"}, "commit"=>"Create City"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: utf8, authenticity_token, city, commit, action, controller):
+  app/controllers/cities_controller.rb:15:in `new'
+  app/controllers/cities_controller.rb:15:in `create'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:04:08 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"Berkeley, CA", "description"=>"Hippies"}, "commit"=>"Create City"}
+Completed 500 Internal Server Error in 4ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: utf8, authenticity_token, city, commit, action, controller):
+  app/controllers/cities_controller.rb:15:in `new'
+  app/controllers/cities_controller.rb:15:in `create'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2014-02-20 18:04:11 -0800
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered cities/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:04:11 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:04:11 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:04:11 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:04:11 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at 2014-02-20 18:04:15 -0800
+Processing by CitiesController#new as HTML
+  Rendered cities/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:04:15 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:04:15 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:04:15 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:04:15 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:04:21 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"NYC", "description"=>"buildings"}, "commit"=>"Create City"}
+Completed 500 Internal Server Error in 0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: utf8, authenticity_token, city, commit, action, controller):
+  app/controllers/cities_controller.rb:15:in `new'
+  app/controllers/cities_controller.rb:15:in `create'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.5ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:06:31 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"NYC", "description"=>"buildings"}, "commit"=>"Create City"}
+Completed 500 Internal Server Error in 3ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: utf8, authenticity_token, city, commit, action, controller):
+  app/controllers/cities_controller.rb:15:in `new'
+  app/controllers/cities_controller.rb:15:in `create'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2014-02-20 18:06:33 -0800
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" 
+  Rendered cities/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:06:33 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:06:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:06:33 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:06:33 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at 2014-02-20 18:06:35 -0800
+Processing by CitiesController#new as HTML
+  Rendered cities/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:06:35 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:06:35 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:06:35 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:06:35 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:06:38 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"sdfsd", "description"=>"dsfsd"}, "commit"=>"Create City"}
+Completed 500 Internal Server Error in 0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: utf8, authenticity_token, city, commit, action, controller):
+  app/controllers/cities_controller.rb:15:in `new'
+  app/controllers/cities_controller.rb:15:in `create'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:07:40 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"sdfsd", "description"=>"dsfsd"}, "commit"=>"Create City"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.4ms)[0m  INSERT INTO "cities" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Fri, 21 Feb 2014 02:07:40 UTC +00:00], ["description", "dsfsd"], ["name", "sdfsd"], ["updated_at", Fri, 21 Feb 2014 02:07:40 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 42ms
+
+NameError (undefined local variable or method `city' for #<CitiesController:0x007fc78d6ebac0>):
+  app/controllers/cities_controller.rb:17:in `create'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2014-02-20 18:07:48 -0800
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.5ms)[0m  SELECT "cities".* FROM "cities" 
+  Rendered cities/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:07:48 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:07:48 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:07:48 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:07:48 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at 2014-02-20 18:07:51 -0800
+Processing by CitiesController#new as HTML
+  Rendered cities/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:07:51 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:07:51 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:07:51 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:07:51 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:07:58 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"NYC", "description"=>"Big Apple"}, "commit"=>"Create City"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cities" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Fri, 21 Feb 2014 02:07:58 UTC +00:00], ["description", "Big Apple"], ["name", "NYC"], ["updated_at", Fri, 21 Feb 2014 02:07:58 UTC +00:00]]
+  [1m[36m (15.8ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 20ms
+
+NameError (undefined local variable or method `city' for #<CitiesController:0x007fc78bdab128>):
+  app/controllers/cities_controller.rb:17:in `create'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+
+
+Started GET "/cities" for 127.0.0.1 at 2014-02-20 18:08:17 -0800
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" 
+  Rendered cities/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:08:17 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:08:17 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:08:17 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:08:17 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at 2014-02-20 18:08:20 -0800
+Processing by CitiesController#new as HTML
+  Rendered cities/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:08:20 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:08:20 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:08:20 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:08:20 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:08:27 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"Boston", "description"=>"Beantown"}, "commit"=>"Create City"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cities" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Fri, 21 Feb 2014 02:08:27 UTC +00:00], ["description", "Beantown"], ["name", "Boston"], ["updated_at", Fri, 21 Feb 2014 02:08:27 UTC +00:00]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cities/3
+Completed 302 Found in 20ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/cities/3" for 127.0.0.1 at 2014-02-20 18:08:27 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  app/controllers/cities_controller.rb:7:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.8ms)
+
+
+Started GET "/cities/3" for 127.0.0.1 at 2014-02-20 18:09:34 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCity Load (1.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "3"]]
+ERROR: compiling _app_views_cities_show_html_erb__4018915410297919239_70247500356500 RAISED /Users/apprentice/cityknow/app/views/cities/show.html.erb:1: syntax error, unexpected '(', expecting ')'
+...link_to @city.name, @city_path(@city) );@output_buffer.safe_...
+...                               ^
+Function body:           def _app_views_cities_show_html_erb__4018915410297919239_70247500356500(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "cities/show";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h2>');@output_buffer.append= ( link_to @city.name, @city_path(@city) );@output_buffer.safe_concat('</h2>
+<p>');@output_buffer.append= ( @city.description );@output_buffer.safe_concat('</p>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/template.rb:297:in `module_eval'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/template.rb:297:in `compile'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/template.rb:232:in `compile!'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/template.rb:144:in `block in render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/notifications.rb:125:in `instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/template.rb:143:in `render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.13/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:414:in `_run__4490681634095367982__process_action__980817082453142011__callbacks'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `instrument'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.13/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/abstract_controller/base.rb:121:in `process'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_controller/metal.rb:246:in `block in action'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:612:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.13/lib/active_record/query_cache.rb:64:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `_run__3997271117645948258__call__1837510439698277411__callbacks'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.13/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.13/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.13/lib/rails/rack/logger.rb:16:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.13/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/static.rb:63:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.13/lib/rails/engine.rb:479:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.13/lib/rails/application.rb:223:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.13/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered cities/show.html.erb within layouts/application (27.9ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (/Users/apprentice/cityknow/app/views/cities/show.html.erb:1: syntax error, unexpected '(', expecting ')'
+...link_to @city.name, @city_path(@city) );@output_buffer.safe_...
+...                               ^):
+    1: <h2><%= link_to @city.name, @city_path(@city) %></h2>
+    2: <p><%= @city.description %></p>
+  actionpack (3.2.13) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.13) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.13) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.13) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.13) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.13) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.13) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__4490681634095367982__process_action__980817082453142011__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__3997271117645948258__call__1837510439698277411__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/cities/3" for 127.0.0.1 at 2014-02-20 18:10:17 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  Rendered cities/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:10:17 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:17 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:17 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:17 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at 2014-02-20 18:10:21 -0800
+Processing by CitiesController#new as HTML
+  Rendered cities/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:10:21 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:21 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:21 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:21 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/cities" for 127.0.0.1 at 2014-02-20 18:10:23 -0800
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"dsfsd", "description"=>"dsfdsf"}, "commit"=>"Create City"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "cities" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Fri, 21 Feb 2014 02:10:23 UTC +00:00], ["description", "dsfdsf"], ["name", "dsfsd"], ["updated_at", Fri, 21 Feb 2014 02:10:23 UTC +00:00]]
+  [1m[35m (15.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/cities/4
+Completed 302 Found in 20ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/cities/4" for 127.0.0.1 at 2014-02-20 18:10:23 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered cities/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:10:24 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:24 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:24 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:24 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/4/edit" for 127.0.0.1 at 2014-02-20 18:10:27 -0800
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"4"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  app/controllers/cities_controller.rb:25:in `edit'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.0ms)
+
+
+Started GET "/cities/4/edit" for 127.0.0.1 at 2014-02-20 18:10:38 -0800
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered cities/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:10:38 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:38 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:38 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:10:38 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:10:42 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"dsfsd", "description"=>"dsfsdcccc"}, "commit"=>"Update City", "id"=>"4"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  app/controllers/cities_controller.rb:29:in `update'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.6ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:11:00 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"dsfsd", "description"=>"dsfsdcccc"}, "commit"=>"Update City", "id"=>"4"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  app/controllers/cities_controller.rb:29:in `update'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+
+
+Started GET "/cities/4" for 127.0.0.1 at 2014-02-20 18:11:02 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered cities/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 3.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:11:02 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:11:02 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:11:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:11:02 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/4/edit" for 127.0.0.1 at 2014-02-20 18:11:06 -0800
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered cities/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:11:06 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:11:06 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:11:06 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:11:06 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:11:10 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"rew", "description"=>"dsfdsf"}, "commit"=>"Update City", "id"=>"4"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  app/controllers/cities_controller.rb:29:in `update'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:12:21 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"rew", "description"=>"dsfdsf"}, "commit"=>"Update City", "id"=>"4"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  app/controllers/cities_controller.rb:29:in `update'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started GET "/cities/4" for 127.0.0.1 at 2014-02-20 18:12:25 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered cities/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 5.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:12:25 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:25 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:25 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:25 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/4/edit" for 127.0.0.1 at 2014-02-20 18:12:28 -0800
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered cities/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:12:28 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:28 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:28 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:28 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:12:32 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"dsfsd", "description"=>"lala"}, "commit"=>"Update City", "id"=>"4"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  app/controllers/cities_controller.rb:29:in `update'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.8ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:12:52 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"dsfsd", "description"=>"lala"}, "commit"=>"Update City", "id"=>"4"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+Completed 500 Internal Server Error in 8ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/cities_controller.rb:30:in `update'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started GET "/cities/4" for 127.0.0.1 at 2014-02-20 18:12:54 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered cities/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:12:54 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:54 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:54 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:54 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/4/edit" for 127.0.0.1 at 2014-02-20 18:12:57 -0800
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered cities/edit.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:12:57 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:57 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:57 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:12:57 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:13:00 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"ll", "description"=>"dsfdsf"}, "commit"=>"Update City", "id"=>"4"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "4"]]
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/cities_controller.rb:30:in `update'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/cities/4" for 127.0.0.1 at 2014-02-20 18:13:16 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered cities/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:13:16 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:16 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:16 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:16 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/4/edit" for 127.0.0.1 at 2014-02-20 18:13:19 -0800
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered cities/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:13:19 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:19 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:19 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:19 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:13:22 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"dsfsd", "description"=>"lala"}, "commit"=>"Update City", "id"=>"4"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cities/4
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/cities/4" for 127.0.0.1 at 2014-02-20 18:13:22 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered cities/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:13:22 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:22 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:22 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:22 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/4" for 127.0.0.1 at 2014-02-20 18:13:54 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered cities/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:13:54 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:54 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:54 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:54 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/4/edit" for 127.0.0.1 at 2014-02-20 18:13:56 -0800
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered cities/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:13:56 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:56 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:56 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:13:56 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/cities/4" for 127.0.0.1 at 2014-02-20 18:14:00 -0800
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueXr4v7qQA6hLh+AN5xbbuEDyWA1REyXaWdXPaLbzf8=", "city"=>{"name"=>"alaa", "description"=>"dsfdsf"}, "commit"=>"Update City", "id"=>"4"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "cities" SET "name" = 'alaa', "updated_at" = '2014-02-21 02:14:00.973589' WHERE "cities"."id" = 4[0m
+  [1m[35m (15.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/cities/4
+Completed 302 Found in 21ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/cities/4" for 127.0.0.1 at 2014-02-20 18:14:00 -0800
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered cities/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:14:01 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:14:01 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:14:01 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:14:01 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/" for 127.0.0.1 at 2014-02-20 18:14:05 -0800
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" 
+  Rendered cities/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 18:14:05 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 18:14:05 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 18:14:05 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:14:05 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/application.js" for 127.0.0.1 at 2014-02-20 19:15:34 -0800
+
+ActionController::RoutingError (No route matches [GET] "/application.js"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:15:48 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Compiled bootstrap-editable.css  (0ms)  (pid 14183)
+Compiled bootstrap-switch.css  (0ms)  (pid 14183)
+Compiled bootstrap.min.css  (0ms)  (pid 14183)
+Compiled color/gray.css  (0ms)  (pid 14183)
+Compiled color/green.css  (0ms)  (pid 14183)
+Compiled color/magenta.css  (0ms)  (pid 14183)
+Compiled color/orange.css  (0ms)  (pid 14183)
+Compiled colorpicker.css  (0ms)  (pid 14183)
+Compiled datatables.css  (0ms)  (pid 14183)
+Compiled datepicker.css  (0ms)  (pid 14183)
+Compiled daterange-picker.css  (0ms)  (pid 14183)
+Compiled docs.css  (0ms)  (pid 14183)
+Compiled dropzone.css  (0ms)  (pid 14183)
+Compiled font-awesome.min.css  (0ms)  (pid 14183)
+Compiled fullcalendar.css  (0ms)  (pid 14183)
+Compiled isotope.css  (0ms)  (pid 14183)
+Compiled jquery.fancybox.css  (0ms)  (pid 14183)
+Compiled jquery.fileupload-ui.css  (0ms)  (pid 14183)
+Compiled ladda-themeless.min.css  (0ms)  (pid 14183)
+Compiled morris.css  (0ms)  (pid 14183)
+Compiled pygments.css  (0ms)  (pid 14183)
+Compiled se7en-font.css  (0ms)  (pid 14183)
+Compiled select2.css  (0ms)  (pid 14183)
+Compiled social-buttons.css  (0ms)  (pid 14183)
+Compiled style.css  (0ms)  (pid 14183)
+Completed 500 Internal Server Error in 284ms
+
+ActionView::Template::Error (cannot load such file -- sass
+  (in /Users/apprentice/cityknow/app/assets/stylesheets/style.sass)):
+    2: <html>
+    3: <head>
+    4:   <title>CityKnow</title>
+    5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___115455298856704566_70099536042180'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/cities/" for 127.0.0.1 at 2014-02-20 19:16:50 -0800
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered cities/index.html.erb within layouts/application (3.6ms)
+WARNING on line 2985 of /Users/apprentice/cityknow/app/assets/stylesheets/style.sass:
+This selector doesn't have any properties and will not be rendered.
+WARNING on line 3215 of /Users/apprentice/cityknow/app/assets/stylesheets/style.sass:
+This selector doesn't have any properties and will not be rendered.
+WARNING on line 3913 of /Users/apprentice/cityknow/app/assets/stylesheets/style.sass:
+This selector doesn't have any properties and will not be rendered.
+Compiled style.css  (1505ms)  (pid 14228)
+Compiled summernote.css  (0ms)  (pid 14228)
+Compiled timepicker.css  (0ms)  (pid 14228)
+Compiled typeahead.css  (0ms)  (pid 14228)
+Compiled wizard.css  (0ms)  (pid 14228)
+Compiled application.css  (1604ms)  (pid 14228)
+Compiled jquery.js  (0ms)  (pid 14228)
+Compiled jquery_ujs.js  (0ms)  (pid 14228)
+Compiled address.js  (0ms)  (pid 14228)
+Compiled bootstrap-colorpicker.js  (0ms)  (pid 14228)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 14228)
+Compiled bootstrap-editable.min.js  (3ms)  (pid 14228)
+Compiled bootstrap-fileupload.js  (0ms)  (pid 14228)
+Compiled bootstrap-switch.min.js  (0ms)  (pid 14228)
+Compiled bootstrap-timepicker.js  (0ms)  (pid 14228)
+Compiled bootstrap-wysihtml5.js  (0ms)  (pid 14228)
+Compiled bootstrap.min.js  (0ms)  (pid 14228)
+Compiled datatable-editable.js  (0ms)  (pid 14228)
+Compiled date.js  (0ms)  (pid 14228)
+Compiled daterange-picker.js  (0ms)  (pid 14228)
+Compiled docs.js  (0ms)  (pid 14228)
+Compiled dropzone.js  (1ms)  (pid 14228)
+Compiled excanvas.min.js  (0ms)  (pid 14228)
+Compiled fitvids.js  (0ms)  (pid 14228)
+Compiled fullcalendar.min.js  (0ms)  (pid 14228)
+Compiled gcal.js  (0ms)  (pid 14228)
+Compiled isotope_extras.js  (0ms)  (pid 14228)
+Compiled jquery.bootstrap.wizard.js  (0ms)  (pid 14228)
+Compiled jquery.dataTables.min.js  (0ms)  (pid 14228)
+Compiled jquery.easy-pie-chart.js  (0ms)  (pid 14228)
+Compiled jquery.fancybox.pack.js  (0ms)  (pid 14228)
+Compiled jquery.inputmask.min.js  (0ms)  (pid 14228)
+Compiled jquery.isotope.min.js  (0ms)  (pid 14228)
+Compiled jquery.mousewheel.js  (0ms)  (pid 14228)
+Compiled jquery.sparkline.min.js  (0ms)  (pid 14228)
+Compiled jquery.validate.js  (0ms)  (pid 14228)
+Compiled jquery.vmap.min.js  (0ms)  (pid 14228)
+Compiled jquery.vmap.sampledata.js  (0ms)  (pid 14228)
+Compiled jquery.vmap.world.js  (0ms)  (pid 14228)
+Compiled ladda.min.js  (0ms)  (pid 14228)
+Compiled main.js  (1ms)  (pid 14228)
+Completed 500 Internal Server Error in 2150ms
+
+ActionView::Template::Error (cannot load such file -- coffee_script
+  (in /Users/apprentice/cityknow/app/assets/javascripts/main.js.coffee)):
+    3: <head>
+    4:   <title>CityKnow</title>
+    5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___116478799789556189_70289126151480'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/cities/" for 127.0.0.1 at 2014-02-20 19:17:32 -0800
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered cities/index.html.erb within layouts/application (3.0ms)
+Compiled main.js  (417ms)  (pid 14262)
+Compiled mockjax.js  (0ms)  (pid 14262)
+Compiled modernizr.custom.js  (0ms)  (pid 14262)
+Compiled moment.js  (0ms)  (pid 14262)
+Compiled morris.min.js  (0ms)  (pid 14262)
+Compiled prettify.js  (0ms)  (pid 14262)
+Compiled raphael.min.js  (1ms)  (pid 14262)
+Compiled respond.js  (0ms)  (pid 14262)
+Compiled select2.js  (1ms)  (pid 14262)
+Compiled selectivizr-min.js  (0ms)  (pid 14262)
+Compiled skycons.js  (0ms)  (pid 14262)
+Compiled spin.min.js  (0ms)  (pid 14262)
+Compiled styleswitcher.js  (0ms)  (pid 14262)
+Compiled summernote.min.js  (1ms)  (pid 14262)
+Compiled typeahead.js  (0ms)  (pid 14262)
+Compiled wysihtml5.min.js  (0ms)  (pid 14262)
+Compiled wysiwyg.js  (0ms)  (pid 14262)
+Compiled xeditable-demo-mock.js  (0ms)  (pid 14262)
+Compiled xeditable-demo.js  (0ms)  (pid 14262)
+Compiled application.js  (697ms)  (pid 14262)
+Completed 200 OK in 909ms (Views: 863.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /bootstrap-switch.css - 200 OK (3ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /bootstrap-editable.css - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /bootstrap.min.css - 200 OK (2ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /color/gray.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /application.css - 200 OK (109ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /colorpicker.css - 200 OK (3ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /color/orange.css - 200 OK (2ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /color/magenta.css - 200 OK (2ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /color/green.css - 200 OK (2ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /datatables.css - 200 OK (3ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /datepicker.css - 200 OK (3ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /daterange-picker.css - 200 OK (2ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /docs.css - 200 OK (2ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /dropzone.css - 200 OK (18ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /font-awesome.min.css - 200 OK (4ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /fullcalendar.css - 200 OK (3ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /isotope.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.fancybox.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.fileupload-ui.css - 200 OK (3ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /ladda-themeless.min.css - 200 OK (2ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /morris.css - 200 OK (3ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /pygments.css - 200 OK (2ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /se7en-font.css - 200 OK (3ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /select2.css - 200 OK (3ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /social-buttons.css - 200 OK (21ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /style.css - 200 OK (3ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /summernote.css - 200 OK (2ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /timepicker.css - 200 OK (5ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /typeahead.css - 200 OK (2ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /wizard.css - 200 OK (3ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /address.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-colorpicker.js - 200 OK (3ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-datepicker.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-editable.min.js - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-fileupload.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-switch.min.js - 200 OK (20ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-timepicker.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-wysihtml5.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /datatable-editable.js - 200 OK (4ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /daterange-picker.js - 200 OK (6ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /dropzone.js - 200 OK (2ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /excanvas.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /docs.js - 200 OK (2ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /date.js - 200 OK (2ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /fitvids.js - 200 OK (2ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /fullcalendar.min.js - 200 OK (4ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /gcal.js - 200 OK (2ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /isotope_extras.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.bootstrap.wizard.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.dataTables.min.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.easy-pie-chart.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.fancybox.pack.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.inputmask.min.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.isotope.min.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.mousewheel.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.validate.js - 200 OK (23ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.sparkline.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.vmap.min.js - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /jquery.vmap.sampledata.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /jquery.vmap.world.js - 200 OK (4ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /ladda.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /main.js - 200 OK (3ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /modernizr.custom.js - 200 OK (4ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /mockjax.js - 200 OK (2ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /morris.min.js - 200 OK (5ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /prettify.js - 200 OK (2ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /moment.js - 200 OK (2ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /raphael.min.js - 200 OK (3ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /respond.js - 200 OK (5ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /select2.js - 200 OK (3ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /selectivizr-min.js - 200 OK (2ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /skycons.js - 200 OK (3ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /styleswitcher.js - 200 OK (2ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /summernote.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /spin.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /typeahead.js - 200 OK (2ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /wysiwyg.js - 200 OK (1ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /wysihtml5.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /xeditable-demo-mock.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /application.js - 200 OK (71ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /xeditable-demo.js - 200 OK (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:17:43 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:43 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:44 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:44 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 77ms (Views: 46.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 61ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:00 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:00 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 42ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /application.js - 304 Not Modified (1ms)

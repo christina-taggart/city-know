@@ -1,5 +1,6 @@
 CityKnow::Application.routes.draw do
   devise_for :users
+  resources :cities
 
   root :to => "pages#index"
 

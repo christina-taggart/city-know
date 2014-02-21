@@ -6,6 +6,8 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'devise'
+gem 'sass-rails'
+gem 'coffee-rails'
 
 group :assets do
   gem 'uglifier', '>= 1.0.3'
@@ -20,4 +22,5 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end

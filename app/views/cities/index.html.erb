@@ -1,0 +1,4 @@
+<% @cities.each do |city| %>
+  <h2><%= link_to city.name, city_path(city) %></h2>
+  <p><%= city.description %></p>
+<% end %>
