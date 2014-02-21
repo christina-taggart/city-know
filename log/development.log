@@ -536,6 +536,7 @@ Migrating to CreateCities (20140221005941)
   [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
   [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
 Connecting to database specified by database.yml
+<<<<<<< HEAD
   [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (115.6ms)[0m  DROP DATABASE IF EXISTS "cityknow_test"
   [1m[36m (306.4ms)[0m  [1mCREATE DATABASE "cityknow_test" ENCODING = 'utf8'[0m
@@ -615,6 +616,139 @@ SyntaxError (/Users/apprentice/cityknow/app/controllers/cities_controller.rb:41:
   actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
   actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:54:in `controller'
   actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:32:in `call'
+=======
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20140221002329)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221002329')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCities (20140221005941)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "cities" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221005941')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (119.3ms)[0m  DROP DATABASE IF EXISTS "cityknow_test"
+  [1m[36m (248.3ms)[0m  [1mCREATE DATABASE "cityknow_test" ENCODING = 'utf8'[0m
+  [1m[35m (10.0ms)[0m  CREATE TABLE "cities" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (6.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (2.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140221005941')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140221002329')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20140221002329)
+Migrating to CreateCities (20140221005941)
+Migrating to CreatePost (20140221011242)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (13.6ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "city_id" integer, "title" character varying(255), "body" text, "votes" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221011242')
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (120.6ms)[0m  DROP DATABASE IF EXISTS "cityknow_test"
+  [1m[36m (247.2ms)[0m  [1mCREATE DATABASE "cityknow_test" ENCODING = 'utf8'[0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "cities" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "city_id" integer, "title" character varying(255), "body" text, "votes" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140221011242')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140221002329')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140221005941')
+Connecting to database specified by database.yml
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20140221002329)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221002329')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCities (20140221005941)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "cities" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221005941')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePost (20140221011242)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "city_id" integer, "title" character varying(255), "body" text, "vote_count" integer DEFAULT 1, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221011242')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (118.4ms)[0m  DROP DATABASE IF EXISTS "cityknow_test"
+  [1m[36m (245.3ms)[0m  [1mCREATE DATABASE "cityknow_test" ENCODING = 'utf8'[0m
+  [1m[35m (8.4ms)[0m  CREATE TABLE "cities" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "city_id" integer, "title" character varying(255), "body" text, "vote_count" integer DEFAULT 1, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (5.8ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140221011242')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140221002329')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140221005941')
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:21:40 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (3.9ms)
+Compiled jquery.js  (1ms)  (pid 15145)
+Compiled jquery_ujs.js  (0ms)  (pid 15145)
+Compiled application.js  (37ms)  (pid 15145)
+Completed 200 OK in 70ms (Views: 69.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:40 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:40 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:21:40 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:40 -0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/cities/1/posts" for 127.0.0.1 at 2014-02-20 19:21:58 -0800
+
+AbstractController::ActionNotFound (The action 'index' could not be found for PostsController):
+  actionpack (3.2.13) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+>>>>>>> origin/create-post
   journey (1.0.4) lib/journey/router.rb:68:in `block in call'
   journey (1.0.4) lib/journey/router.rb:56:in `each'
   journey (1.0.4) lib/journey/router.rb:56:in `call'
@@ -634,7 +768,11 @@ SyntaxError (/Users/apprentice/cityknow/app/controllers/cities_controller.rb:41:
   activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
   activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+<<<<<<< HEAD
   activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__3997271117645948258__call__1837510439698277411__callbacks'
+=======
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1349346626029559109__call__4132681224315212223__callbacks'
+>>>>>>> origin/create-post
   activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
   activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
   activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
@@ -658,6 +796,7 @@ SyntaxError (/Users/apprentice/cityknow/app/controllers/cities_controller.rb:41:
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+<<<<<<< HEAD
   /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
   /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
   /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
@@ -1216,6 +1355,142 @@ ActionView::Template::Error (/Users/apprentice/cityknow/app/views/cities/show.ht
   actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
   actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
   actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+=======
+  /usr/local/rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.4ms)
+
+
+Started GET "/cities/1/posts/1" for 127.0.0.1 at 2014-02-20 19:22:08 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"1"}
+  Rendered posts/show.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <h3><%= @post.title %></h3>
+    2: <p><%= @post.body %></p>
+  app/views/posts/show.html.erb:1:in `_app_views_posts_show_html_erb___3506081961088722472_70333002251280'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/cities/1/posts/new" for 127.0.0.1 at 2014-02-20 19:22:29 -0800
+Processing by PostsController#new as HTML
+  Parameters: {"city_id"=>"1"}
+  Rendered posts/new.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 57ms
+
+ActionView::Template::Error (undefined method `form_form' for #<#<Class:0x007fef5b3ab518>:0x007fef5dfcdcb8>):
+    1: 
+    2: <%= form_form [@city, @post] do |f| %>
+    3: 	<%= f.label :title %>
+    4: 	<%= f.text_field :title %>
+    5: 
+  app/views/posts/new.html.erb:2:in `_app_views_posts_new_html_erb___3694190805055103560_70333025378920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.8ms)
+
+
+Started GET "/cities/1/posts/new" for 127.0.0.1 at 2014-02-20 19:22:58 -0800
+Processing by PostsController#new as HTML
+  Parameters: {"city_id"=>"1"}
+  Rendered posts/new.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `1_posts_path' for #<#<Class:0x007fef5b3ab518>:0x007fef5cc91ca8>):
+    1: 
+    2: <%= form_for [@city, @post] do |f| %>
+    3: 	<%= f.label :title %>
+    4: 	<%= f.text_field :title %>
+    5: 
+  app/views/posts/new.html.erb:2:in `_app_views_posts_new_html_erb___3694190805055103560_70333015295420'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (18.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.3ms)
+
+
+Started GET "/cities/1/posts/new" for 127.0.0.1 at 2014-02-20 19:24:05 -0800
+Processing by PostsController#new as HTML
+  Parameters: {"city_id"=>"1"}
+  Rendered posts/new.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `1_posts_path' for #<#<Class:0x007fef5b3ab518>:0x007fef5c910610>):
+    1: 
+    2: <%= form_for [@city, @post] do |f| %>
+    3: 	<%= f.label :title %>
+    4: 	<%= f.text_field :title %>
+    5: 
+  app/views/posts/new.html.erb:2:in `_app_views_posts_new_html_erb___3694190805055103560_70333015295420'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/cities/1/posts/new" for 127.0.0.1 at 2014-02-20 19:24:50 -0800
+Processing by PostsController#new as HTML
+  Parameters: {"city_id"=>"1"}
+  Rendered posts/new.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `1_posts_path' for #<#<Class:0x007fef5b3ab518>:0x007fef5db7a0a8>):
+    1: 
+    2: <%= form_for [@city, @post] do |f| %>
+    3: 	<%= f.label :title %>
+    4: 	<%= f.text_field :title %>
+    5: 
+  app/views/posts/new.html.erb:2:in `_app_views_posts_new_html_erb___3694190805055103560_70333015295420'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/cities/1/posts/new" for 127.0.0.1 at 2014-02-20 19:24:56 -0800
+Processing by PostsController#new as HTML
+  Parameters: {"city_id"=>"1"}
+  Rendered posts/new.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `1_posts_path' for #<#<Class:0x007fef5b3ab518>:0x007fef5b3b2548>):
+    1: 
+    2: <%= form_for [@city, @post] do |f| %>
+    3: 	<%= f.label :title %>
+    4: 	<%= f.text_field :title %>
+    5: 
+  app/views/posts/new.html.erb:2:in `_app_views_posts_new_html_erb___3694190805055103560_70333015295420'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.1ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2014-02-20 19:25:19 -0800
+
+ActionController::RoutingError (uninitialized constant CitiesController):
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:229:in `constantize'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:32:in `call'
+>>>>>>> origin/create-post
   journey (1.0.4) lib/journey/router.rb:68:in `block in call'
   journey (1.0.4) lib/journey/router.rb:56:in `each'
   journey (1.0.4) lib/journey/router.rb:56:in `call'
@@ -1235,7 +1510,11 @@ ActionView::Template::Error (/Users/apprentice/cityknow/app/views/cities/show.ht
   activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
   activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
   actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+<<<<<<< HEAD
   activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__3997271117645948258__call__1837510439698277411__callbacks'
+=======
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1349346626029559109__call__4132681224315212223__callbacks'
+>>>>>>> origin/create-post
   activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
   activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
   activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
@@ -1259,6 +1538,7 @@ ActionView::Template::Error (/Users/apprentice/cityknow/app/views/cities/show.ht
   rack (1.4.5) lib/rack/content_length.rb:14:in `call'
   railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
   rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+<<<<<<< HEAD
   /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
   /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
   /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
@@ -4448,3 +4728,51 @@ Served asset /wysiwyg.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
 Served asset /application.js - 304 Not Modified (1ms)
+=======
+  /usr/local/rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/cities/1/posts/new" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Processing by PostsController#new as HTML
+  Parameters: {"city_id"=>"1"}
+  Rendered posts/new.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `1_posts_path' for #<#<Class:0x007fef5b3ab518>:0x007fef5b0a2f38>):
+    1: 
+    2: <%= form_for [@city, @post] do |f| %>
+    3: 	<%= f.label :title %>
+    4: 	<%= f.text_field :title %>
+    5: 
+  app/views/posts/new.html.erb:2:in `_app_views_posts_new_html_erb___3694190805055103560_70333015295420'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.1ms)
+
+
+Started GET "/cities/1/posts/new" for 127.0.0.1 at 2014-02-20 19:25:36 -0800
+Processing by PostsController#new as HTML
+  Parameters: {"city_id"=>"1"}
+  Rendered posts/new.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 28ms
+
+ActionView::Template::Error (undefined method `1_posts_path' for #<#<Class:0x007fef5b3ab518>:0x007fef5b469ae0>):
+    1: 
+    2: <%= form_for [@city, @post] do |f| %>
+    3: 	<%= f.label :title %>
+    4: 	<%= f.text_field :title %>
+    5: 
+  app/views/posts/new.html.erb:2:in `_app_views_posts_new_html_erb___3694190805055103560_70333015295420'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.1ms)
+>>>>>>> origin/create-post

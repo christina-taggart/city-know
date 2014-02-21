@@ -1,4 +1,5 @@
 Connecting to database specified by database.yml
+<<<<<<< HEAD
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
 Connecting to database specified by database.yml
@@ -35,6 +36,105 @@ Connecting to database specified by database.yml
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
 PG::UndefinedTable: ERROR:  relation "cities" does not exist
 LINE 5:              WHERE a.attrelid = '"cities"'::regclass
+=======
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 5:              WHERE a.attrelid = '"posts"'::regclass
+>>>>>>> origin/create-post
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+<<<<<<< HEAD
+             WHERE a.attrelid = '"cities"'::regclass
+=======
+             WHERE a.attrelid = '"posts"'::regclass
+>>>>>>> origin/create-post
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+<<<<<<< HEAD
+PG::UndefinedTable: ERROR:  relation "cities" does not exist
+LINE 5:              WHERE a.attrelid = '"cities"'::regclass
+=======
+PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 5:              WHERE a.attrelid = '"posts"'::regclass
+>>>>>>> origin/create-post
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+<<<<<<< HEAD
+             WHERE a.attrelid = '"cities"'::regclass
+=======
+             WHERE a.attrelid = '"posts"'::regclass
+>>>>>>> origin/create-post
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+<<<<<<< HEAD
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "cities" does not exist
+LINE 5:              WHERE a.attrelid = '"cities"'::regclass
+=======
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 5:              WHERE a.attrelid = '"posts"'::regclass
+>>>>>>> origin/create-post
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+<<<<<<< HEAD
+             WHERE a.attrelid = '"cities"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "cities" does not exist
+LINE 5:              WHERE a.attrelid = '"cities"'::regclass
+=======
+             WHERE a.attrelid = '"posts"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "posts" does not exist
+LINE 5:              WHERE a.attrelid = '"posts"'::regclass
+>>>>>>> origin/create-post
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+<<<<<<< HEAD
+             WHERE a.attrelid = '"cities"'::regclass
+=======
+             WHERE a.attrelid = '"posts"'::regclass
+>>>>>>> origin/create-post
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+<<<<<<< HEAD
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "cities" does not exist
+LINE 5:              WHERE a.attrelid = '"cities"'::regclass
                                         ^
 :             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
@@ -59,64 +159,6 @@ LINE 5:              WHERE a.attrelid = '"cities"'::regclass
 
   [1m[35m (0.1ms)[0m  ROLLBACK
 Connecting to database specified by database.yml
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35m (0.2ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-PG::UndefinedTable: ERROR:  relation "cities" does not exist
-LINE 5:              WHERE a.attrelid = '"cities"'::regclass
-                                        ^
-:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
-                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
-              FROM pg_attribute a LEFT JOIN pg_attrdef d
-                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
-             WHERE a.attrelid = '"cities"'::regclass
-               AND a.attnum > 0 AND NOT a.attisdropped
-             ORDER BY a.attnum
-
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-PG::UndefinedTable: ERROR:  relation "cities" does not exist
-LINE 5:              WHERE a.attrelid = '"cities"'::regclass
-                                        ^
-:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
-                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
-              FROM pg_attribute a LEFT JOIN pg_attrdef d
-                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
-             WHERE a.attrelid = '"cities"'::regclass
-               AND a.attnum > 0 AND NOT a.attisdropped
-             ORDER BY a.attnum
-
-  [1m[35m (0.1ms)[0m  ROLLBACK
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-PG::UndefinedTable: ERROR:  relation "cities" does not exist
-LINE 5:              WHERE a.attrelid = '"cities"'::regclass
-                                        ^
-:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
-                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
-              FROM pg_attribute a LEFT JOIN pg_attrdef d
-                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
-             WHERE a.attrelid = '"cities"'::regclass
-               AND a.attnum > 0 AND NOT a.attisdropped
-             ORDER BY a.attnum
-
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-PG::UndefinedTable: ERROR:  relation "cities" does not exist
-LINE 5:              WHERE a.attrelid = '"cities"'::regclass
-                                        ^
-:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
-                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
-              FROM pg_attribute a LEFT JOIN pg_attrdef d
-                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
-             WHERE a.attrelid = '"cities"'::regclass
-               AND a.attnum > 0 AND NOT a.attisdropped
-             ORDER BY a.attnum
-
-  [1m[35m (0.1ms)[0m  ROLLBACK
-Connecting to database specified by database.yml
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
 PG::UndefinedTable: ERROR:  relation "cities" does not exist
 LINE 5:              WHERE a.attrelid = '"cities"'::regclass
@@ -142,48 +184,17 @@ LINE 5:              WHERE a.attrelid = '"cities"'::regclass
                AND a.attnum > 0 AND NOT a.attisdropped
              ORDER BY a.attnum
 
-  [1m[35m (0.1ms)[0m  ROLLBACK
+=======
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-PG::UndefinedTable: ERROR:  relation "cities" does not exist
-LINE 5:              WHERE a.attrelid = '"cities"'::regclass
-                                        ^
-:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
-                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
-              FROM pg_attribute a LEFT JOIN pg_attrdef d
-                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
-             WHERE a.attrelid = '"cities"'::regclass
-               AND a.attnum > 0 AND NOT a.attisdropped
-             ORDER BY a.attnum
-
-  [1m[35m (0.2ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-PG::UndefinedTable: ERROR:  relation "cities" does not exist
-LINE 5:              WHERE a.attrelid = '"cities"'::regclass
-                                        ^
-:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
-                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
-              FROM pg_attribute a LEFT JOIN pg_attrdef d
-                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
-             WHERE a.attrelid = '"cities"'::regclass
-               AND a.attnum > 0 AND NOT a.attisdropped
-             ORDER BY a.attnum
-
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
 Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35m (0.2ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
@@ -193,8 +204,79 @@ Connecting to database specified by database.yml
   [1m[35m (0.2ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+>>>>>>> origin/create-post
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+<<<<<<< HEAD
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "cities" does not exist
+LINE 5:              WHERE a.attrelid = '"cities"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"cities"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+PG::UndefinedTable: ERROR:  relation "cities" does not exist
+LINE 5:              WHERE a.attrelid = '"cities"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"cities"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+=======
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+>>>>>>> origin/create-post
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+<<<<<<< HEAD
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+=======
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+>>>>>>> origin/create-post
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+<<<<<<< HEAD
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+=======
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+>>>>>>> origin/create-post
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+<<<<<<< HEAD
 Connecting to database specified by database.yml
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
@@ -202,3 +284,76 @@ Connecting to database specified by database.yml
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+=======
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+>>>>>>> origin/create-post
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+<<<<<<< HEAD
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+=======
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.8ms)[0m  [1mINSERT INTO "posts" ("body", "city_id", "created_at", "title", "updated_at", "user_id", "vote_count") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["body", "test body"], ["city_id", nil], ["created_at", Fri, 21 Feb 2014 01:28:57 UTC +00:00], ["title", "test title"], ["updated_at", Fri, 21 Feb 2014 01:28:57 UTC +00:00], ["user_id", nil], ["vote_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "posts" ("body", "city_id", "created_at", "title", "updated_at", "user_id", "vote_count") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["body", "test body"], ["city_id", nil], ["created_at", Fri, 21 Feb 2014 01:29:18 UTC +00:00], ["title", "test title"], ["updated_at", Fri, 21 Feb 2014 01:29:18 UTC +00:00], ["user_id", nil], ["vote_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"test", "body"=>"test body"}, "city_id"=>"1"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.2ms)[0m  INSERT INTO "posts" ("body", "city_id", "created_at", "title", "updated_at", "user_id", "vote_count") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["body", "test body"], ["city_id", nil], ["created_at", Fri, 21 Feb 2014 02:21:02 UTC +00:00], ["title", "test"], ["updated_at", Fri, 21 Feb 2014 02:21:02 UTC +00:00], ["user_id", nil], ["vote_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 404 Not Found in 15ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+>>>>>>> origin/create-post
