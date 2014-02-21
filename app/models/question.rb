@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Question < ActiveRecord::Base
 	attr_accessible  :title, :body
 	belongs_to :user
 	belongs_to :city

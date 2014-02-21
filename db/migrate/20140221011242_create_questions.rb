@@ -1,6 +1,6 @@
-class CreatePost < ActiveRecord::Migration
+class CreateQuestions < ActiveRecord::Migration
   def change
-  	create_table :posts do |t|
+  	create_table :questions do |t|
 
   		t.belongs_to 	:user
   		t.belongs_to 	:city

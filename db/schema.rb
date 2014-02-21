@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20140221011242) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "posts", :force => true do |t|
+  create_table "questions", :force => true do |t|
     t.integer  "user_id"
     t.integer  "city_id"
     t.string   "title"
