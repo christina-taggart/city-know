@@ -1,6 +1,18 @@
-<h3><%= @question.title %></h3>
-<p><%= @question.body %></p>
+<div class="container">
+  <%= link_to "Back to City Page", city_path(@city) %>
 
-<% @question.answers.each do |answer| %>
-  <p><%= answer.body %></p>
-<% end %>
+  <h3><%= @question.title %></h3>
+  <p><%= @question.body %></p>
+
+  <br/><br/><br/>
+  <h2>Answers</h2>
+  <% if user_signed_in? %>
+    <%= render :template => 'answers/new' %>
+  <% end %>
+  <% @question.answers.each do |answer| %>
+  <div class="answer">
+    <p class="answer-body"><%= answer.body %></p>
+    <p class="answer-user">Posted by <%= answer.user.name  unless answer.user.nil? %></p>
+  </div>
+  <% end %>
+</div>

@@ -8,16 +8,18 @@ class QuestionsController < ApplicationController
 	end
 
 	def new
+		authenticate_user!
 		@city = City.find(params[:city_id])
 		@question = @city.questions.build
 		respond_with(@city, @question)
 	end
 
 	def create
+		authenticate_user!
 		@city = City.find(params[:city_id])
 		@question = @city.questions.build(params[:question])
 		if @question.save
-			redirect_to city_path(@city)
+			redirect_to city_question_path(@city, @question)
 		else
 			flash.now[:errors] = @question.errors.full_messages
 			render :new
@@ -25,16 +27,20 @@ class QuestionsController < ApplicationController
 	end
 
 	def show
+		@city = City.find(params[:city_id])
 		@question = Question.find(params[:id])
+		@answer = Answer.new
 	end
 
 	def edit
+		authenticate_user!
 		@question = Question.find(params[:id])
 		@city = City.find(params[:city_id])
 	end
 
 
 	def update
+		authenticate_user!
 		question = Question.find(params[:id])
 		city = City.find(params[:city_id])
 		if question.update_attributes(params[:question])
@@ -45,5 +51,6 @@ class QuestionsController < ApplicationController
 	end
 
 	def destroy
+		authenticate_user!
 	end
 end

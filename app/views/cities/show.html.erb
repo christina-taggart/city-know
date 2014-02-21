@@ -1,2 +1,12 @@
-<h2><%= link_to @city.name, city_path(@city) %></h2>
-<p><%= @city.description %></p>
+<div class="container">
+  <h2> <%= @city.name %></h2>
+  <% if user_signed_in? %>
+    <%= link_to "Post a new question", new_city_question_path(@city) %>
+  <% end %>
+  <br/><br/>
+  <ul>
+    <% @questions.each do |question| %>
+      <li><%= link_to question.title, city_question_path(@city, question) %></li>
+    <% end %>
+  </ul>
+</div>

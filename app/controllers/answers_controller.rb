@@ -1,24 +1,31 @@
 class AnswersController < ApplicationController
   def index
+    @city = City.find(params[:city_id])
     @question = Question.find(params[:question_id])
     @answers = @question.answers
   end
 
   def show
-    @answer = Answer.find(params[:answer_id])
+    @city = City.find(params[:city_id])
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
   end
 
   def new
+    authenticate_user!
     @city = City.find(params[:city_id])
     @question = Question.find(params[:question_id])
     @answer = Answer.new
   end
 
   def create
+    authenticate_user!
+    @user = current_user
     @city = City.find(params[:city_id])
     @question = Question.find(params[:question_id])
-    @answer = Answer.new(params[:answer])
+    @answer = @question.answers.build(params[:answer])
     if @answer.save
+      @user.answers << @answer
       redirect_to city_question_path(@city, @question)
     else
       @errors = @city.errors.full_messages
@@ -27,12 +34,14 @@ class AnswersController < ApplicationController
   end
 
   def edit
+    authenticate_user!
     @city = City.find(params[:city_id])
     @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:question_id])
   end
 
   def update
+    authenticate_user!
     @city = City.find(params[:city_id])
     @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:answer_id])
@@ -44,6 +53,7 @@ class AnswersController < ApplicationController
   end
 
   def destroy
+    authenticate_user!
     @city = City.find(params[:city_id])
     @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:answer_id])
