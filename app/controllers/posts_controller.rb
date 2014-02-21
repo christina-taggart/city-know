@@ -1,8 +1,13 @@
 class PostsController < ApplicationController
 
+	def index
+		@city = City.find(params[:city_id])
+		@posts = @city.posts
+	end
+
 	def new
 		@post = Post.new
-		@city = params[:city_id]
+		@city = City.find(params[:city_id])
 	end
 
 	def create
@@ -12,6 +17,9 @@ class PostsController < ApplicationController
 		else
 			erb :new
 		end
+	end
+
+	def show
 	end
 
 	def edit
