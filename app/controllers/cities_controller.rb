@@ -36,7 +36,7 @@ class CitiesController < ApplicationController
   end
 
   def destroy
-    @city = City.find(params[:city_id])
+    @city = City.find(params[:id])
     @city.destroy
     redirect_to root_path
   end

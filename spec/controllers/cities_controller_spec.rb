@@ -31,16 +31,38 @@ describe CitiesController do
 
   context '#create' do
     it "creates a new city" do
-      get :create
-      expect(response).to render_template :index
-    end
-
-    it "flashes an error" do
-      pending
+      post :create, city: FactoryGirl.attributes_for(:city)
+      expect(response).to be_redirect
     end
 
     it "renders new view" do
-      pending
+      post :create
+      expect{city = City.create()}.to render_template 'new'
+    end
+  end
+
+  context '#edit' do
+    it "assigns city to @city" do
+      get :show, id: city.id
+      expect(assigns(:city)).to eq city
+    end
+  end
+
+  context '#update' do
+    it "updates the current city attributes" do
+      expect {
+        put :update, id: city.id, city: {name: "SF"}
+      }.to change { city.reload.name }.to("SF")
+      expect(response).to be_redirect
+    end
+  end
+
+  context '#destroy' do
+    it "deletes the current city" do
+      expect {
+        delete :destroy, id: city.id
+      }.to change { City.count }.by(-1)
+      expect(response).to be_redirect
     end
   end
 
