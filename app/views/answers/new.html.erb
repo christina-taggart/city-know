@@ -1,5 +1,7 @@
-<%= form_for [@city, @question, @answer] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_area :body %><br>
+<%= form_for [@city, @question, @answer], :html => {:role => "form"} do |f| %>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body %><br>
+  </div>
   <%= f.submit  %>
 <% end %>

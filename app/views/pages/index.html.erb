@@ -1,27 +1,19 @@
-<div class="jumbotron center">
-  <h1>Welcome to my app!</h1>
+<% unless user_signed_in? %>
+  <div class="jumbotron center">
+    <h1>Welcome to my app!</h1>
 
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  <p>
-    <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-  </p>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+    <p>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    </p>
+  </div>
+<% end %>
 
-
+<div class="container">
+  <% @cities.each do |city| %>
+    <h2><%= link_to city.name, city_path(city) %></h2>
+    <p><%= city.description %></p>
+  <% end %>
 </div>
 
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-  <li><a href="#profile" data-toggle="tab">Profile</a></li>
-  <li><a href="#messages" data-toggle="tab">Messages</a></li>
-  <li><a href="#settings" data-toggle="tab">Settings</a></li>
-</ul>
-
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="home">xx</div>
-  <div class="tab-pane" id="profile">yy</div>
-  <div class="tab-pane" id="messages">zz</div>
-  <div class="tab-pane" id="settings">dd</div>
-</div>
