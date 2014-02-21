@@ -10,4 +10,5 @@ describe Post do
 		post = Post.create(title: "test title", body: "test body")
 		expect(post.vote_count).to eq 1
 	end
+
 end

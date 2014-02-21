@@ -153,3 +153,21 @@ Connecting to database specified by database.yml
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"test", "body"=>"test body"}, "city_id"=>"1"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.2ms)[0m  INSERT INTO "posts" ("body", "city_id", "created_at", "title", "updated_at", "user_id", "vote_count") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["body", "test body"], ["city_id", nil], ["created_at", Fri, 21 Feb 2014 02:21:02 UTC +00:00], ["title", "test"], ["updated_at", Fri, 21 Feb 2014 02:21:02 UTC +00:00], ["user_id", nil], ["vote_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 404 Not Found in 15ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
