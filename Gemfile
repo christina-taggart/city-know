@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'rails', '3.2.13'
 
 gem 'pg'
+gem 'devise'
 
 group :assets do
   gem 'uglifier', '>= 1.0.3'
