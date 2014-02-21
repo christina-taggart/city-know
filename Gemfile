@@ -8,6 +8,7 @@ gem 'pg'
 gem 'devise'
 gem 'sass-rails'
 gem 'coffee-rails'
+gem 'omniauth-facebook'
 
 group :assets do
   gem 'uglifier', '>= 1.0.3'
@@ -23,5 +24,4 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers'
 end
