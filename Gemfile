@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby "1.9.3"
 gem 'jquery-rails'
-
 gem 'rails', '3.2.13'
 
 gem 'pg'
@@ -15,6 +14,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'dotenv-rails'
   gem 'rspec-rails', "~> 2.0"
 end
 

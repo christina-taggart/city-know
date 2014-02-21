@@ -230,7 +230,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   require "omniauth-facebook"
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
-  config.omniauth :facebook, ENV['APP_ID'], ENV['APP_SECRET'], :strategy_class => OmniAuth::Strategies::Facebook
+  config.omniauth :facebook, ENV['APP_ID'], ENV['APP_SECRET'] #, :strategy_class => OmniAuth::Strategies::Facebook
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
