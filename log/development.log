@@ -1817,3 +1817,2634 @@ Served asset /jquery.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 18:14:05 -0800
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/application.js" for 127.0.0.1 at 2014-02-20 19:15:34 -0800
+
+ActionController::RoutingError (No route matches [GET] "/application.js"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:15:48 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Compiled bootstrap-editable.css  (0ms)  (pid 14183)
+Compiled bootstrap-switch.css  (0ms)  (pid 14183)
+Compiled bootstrap.min.css  (0ms)  (pid 14183)
+Compiled color/gray.css  (0ms)  (pid 14183)
+Compiled color/green.css  (0ms)  (pid 14183)
+Compiled color/magenta.css  (0ms)  (pid 14183)
+Compiled color/orange.css  (0ms)  (pid 14183)
+Compiled colorpicker.css  (0ms)  (pid 14183)
+Compiled datatables.css  (0ms)  (pid 14183)
+Compiled datepicker.css  (0ms)  (pid 14183)
+Compiled daterange-picker.css  (0ms)  (pid 14183)
+Compiled docs.css  (0ms)  (pid 14183)
+Compiled dropzone.css  (0ms)  (pid 14183)
+Compiled font-awesome.min.css  (0ms)  (pid 14183)
+Compiled fullcalendar.css  (0ms)  (pid 14183)
+Compiled isotope.css  (0ms)  (pid 14183)
+Compiled jquery.fancybox.css  (0ms)  (pid 14183)
+Compiled jquery.fileupload-ui.css  (0ms)  (pid 14183)
+Compiled ladda-themeless.min.css  (0ms)  (pid 14183)
+Compiled morris.css  (0ms)  (pid 14183)
+Compiled pygments.css  (0ms)  (pid 14183)
+Compiled se7en-font.css  (0ms)  (pid 14183)
+Compiled select2.css  (0ms)  (pid 14183)
+Compiled social-buttons.css  (0ms)  (pid 14183)
+Compiled style.css  (0ms)  (pid 14183)
+Completed 500 Internal Server Error in 284ms
+
+ActionView::Template::Error (cannot load such file -- sass
+  (in /Users/apprentice/cityknow/app/assets/stylesheets/style.sass)):
+    2: <html>
+    3: <head>
+    4:   <title>CityKnow</title>
+    5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___115455298856704566_70099536042180'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/cities/" for 127.0.0.1 at 2014-02-20 19:16:50 -0800
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered cities/index.html.erb within layouts/application (3.6ms)
+WARNING on line 2985 of /Users/apprentice/cityknow/app/assets/stylesheets/style.sass:
+This selector doesn't have any properties and will not be rendered.
+WARNING on line 3215 of /Users/apprentice/cityknow/app/assets/stylesheets/style.sass:
+This selector doesn't have any properties and will not be rendered.
+WARNING on line 3913 of /Users/apprentice/cityknow/app/assets/stylesheets/style.sass:
+This selector doesn't have any properties and will not be rendered.
+Compiled style.css  (1505ms)  (pid 14228)
+Compiled summernote.css  (0ms)  (pid 14228)
+Compiled timepicker.css  (0ms)  (pid 14228)
+Compiled typeahead.css  (0ms)  (pid 14228)
+Compiled wizard.css  (0ms)  (pid 14228)
+Compiled application.css  (1604ms)  (pid 14228)
+Compiled jquery.js  (0ms)  (pid 14228)
+Compiled jquery_ujs.js  (0ms)  (pid 14228)
+Compiled address.js  (0ms)  (pid 14228)
+Compiled bootstrap-colorpicker.js  (0ms)  (pid 14228)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 14228)
+Compiled bootstrap-editable.min.js  (3ms)  (pid 14228)
+Compiled bootstrap-fileupload.js  (0ms)  (pid 14228)
+Compiled bootstrap-switch.min.js  (0ms)  (pid 14228)
+Compiled bootstrap-timepicker.js  (0ms)  (pid 14228)
+Compiled bootstrap-wysihtml5.js  (0ms)  (pid 14228)
+Compiled bootstrap.min.js  (0ms)  (pid 14228)
+Compiled datatable-editable.js  (0ms)  (pid 14228)
+Compiled date.js  (0ms)  (pid 14228)
+Compiled daterange-picker.js  (0ms)  (pid 14228)
+Compiled docs.js  (0ms)  (pid 14228)
+Compiled dropzone.js  (1ms)  (pid 14228)
+Compiled excanvas.min.js  (0ms)  (pid 14228)
+Compiled fitvids.js  (0ms)  (pid 14228)
+Compiled fullcalendar.min.js  (0ms)  (pid 14228)
+Compiled gcal.js  (0ms)  (pid 14228)
+Compiled isotope_extras.js  (0ms)  (pid 14228)
+Compiled jquery.bootstrap.wizard.js  (0ms)  (pid 14228)
+Compiled jquery.dataTables.min.js  (0ms)  (pid 14228)
+Compiled jquery.easy-pie-chart.js  (0ms)  (pid 14228)
+Compiled jquery.fancybox.pack.js  (0ms)  (pid 14228)
+Compiled jquery.inputmask.min.js  (0ms)  (pid 14228)
+Compiled jquery.isotope.min.js  (0ms)  (pid 14228)
+Compiled jquery.mousewheel.js  (0ms)  (pid 14228)
+Compiled jquery.sparkline.min.js  (0ms)  (pid 14228)
+Compiled jquery.validate.js  (0ms)  (pid 14228)
+Compiled jquery.vmap.min.js  (0ms)  (pid 14228)
+Compiled jquery.vmap.sampledata.js  (0ms)  (pid 14228)
+Compiled jquery.vmap.world.js  (0ms)  (pid 14228)
+Compiled ladda.min.js  (0ms)  (pid 14228)
+Compiled main.js  (1ms)  (pid 14228)
+Completed 500 Internal Server Error in 2150ms
+
+ActionView::Template::Error (cannot load such file -- coffee_script
+  (in /Users/apprentice/cityknow/app/assets/javascripts/main.js.coffee)):
+    3: <head>
+    4:   <title>CityKnow</title>
+    5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___116478799789556189_70289126151480'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/cities/" for 127.0.0.1 at 2014-02-20 19:17:32 -0800
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered cities/index.html.erb within layouts/application (3.0ms)
+Compiled main.js  (417ms)  (pid 14262)
+Compiled mockjax.js  (0ms)  (pid 14262)
+Compiled modernizr.custom.js  (0ms)  (pid 14262)
+Compiled moment.js  (0ms)  (pid 14262)
+Compiled morris.min.js  (0ms)  (pid 14262)
+Compiled prettify.js  (0ms)  (pid 14262)
+Compiled raphael.min.js  (1ms)  (pid 14262)
+Compiled respond.js  (0ms)  (pid 14262)
+Compiled select2.js  (1ms)  (pid 14262)
+Compiled selectivizr-min.js  (0ms)  (pid 14262)
+Compiled skycons.js  (0ms)  (pid 14262)
+Compiled spin.min.js  (0ms)  (pid 14262)
+Compiled styleswitcher.js  (0ms)  (pid 14262)
+Compiled summernote.min.js  (1ms)  (pid 14262)
+Compiled typeahead.js  (0ms)  (pid 14262)
+Compiled wysihtml5.min.js  (0ms)  (pid 14262)
+Compiled wysiwyg.js  (0ms)  (pid 14262)
+Compiled xeditable-demo-mock.js  (0ms)  (pid 14262)
+Compiled xeditable-demo.js  (0ms)  (pid 14262)
+Compiled application.js  (697ms)  (pid 14262)
+Completed 200 OK in 909ms (Views: 863.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /bootstrap-switch.css - 200 OK (3ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /bootstrap-editable.css - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /bootstrap.min.css - 200 OK (2ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /color/gray.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /application.css - 200 OK (109ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /colorpicker.css - 200 OK (3ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /color/orange.css - 200 OK (2ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /color/magenta.css - 200 OK (2ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /color/green.css - 200 OK (2ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /datatables.css - 200 OK (3ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /datepicker.css - 200 OK (3ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /daterange-picker.css - 200 OK (2ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /docs.css - 200 OK (2ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:33 -0800
+Served asset /dropzone.css - 200 OK (18ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /font-awesome.min.css - 200 OK (4ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /fullcalendar.css - 200 OK (3ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /isotope.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.fancybox.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.fileupload-ui.css - 200 OK (3ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /ladda-themeless.min.css - 200 OK (2ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /morris.css - 200 OK (3ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /pygments.css - 200 OK (2ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /se7en-font.css - 200 OK (3ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /select2.css - 200 OK (3ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /social-buttons.css - 200 OK (21ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /style.css - 200 OK (3ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /summernote.css - 200 OK (2ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /timepicker.css - 200 OK (5ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /typeahead.css - 200 OK (2ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /wizard.css - 200 OK (3ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /address.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-colorpicker.js - 200 OK (3ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-datepicker.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-editable.min.js - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-fileupload.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-switch.min.js - 200 OK (20ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-timepicker.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap-wysihtml5.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /bootstrap.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /datatable-editable.js - 200 OK (4ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /daterange-picker.js - 200 OK (6ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /dropzone.js - 200 OK (2ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /excanvas.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /docs.js - 200 OK (2ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /date.js - 200 OK (2ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /fitvids.js - 200 OK (2ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /fullcalendar.min.js - 200 OK (4ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /gcal.js - 200 OK (2ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /isotope_extras.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.bootstrap.wizard.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.dataTables.min.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.easy-pie-chart.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.fancybox.pack.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.inputmask.min.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.isotope.min.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.mousewheel.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.validate.js - 200 OK (23ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.sparkline.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:34 -0800
+Served asset /jquery.vmap.min.js - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /jquery.vmap.sampledata.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /jquery.vmap.world.js - 200 OK (4ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /ladda.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /main.js - 200 OK (3ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /modernizr.custom.js - 200 OK (4ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /mockjax.js - 200 OK (2ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /morris.min.js - 200 OK (5ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /prettify.js - 200 OK (2ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /moment.js - 200 OK (2ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /raphael.min.js - 200 OK (3ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /respond.js - 200 OK (5ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /select2.js - 200 OK (3ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /selectivizr-min.js - 200 OK (2ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /skycons.js - 200 OK (3ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /styleswitcher.js - 200 OK (2ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /summernote.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /spin.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /typeahead.js - 200 OK (2ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /wysiwyg.js - 200 OK (1ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /wysihtml5.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /xeditable-demo-mock.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /application.js - 200 OK (71ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:35 -0800
+Served asset /xeditable-demo.js - 200 OK (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:17:43 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:43 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:44 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:17:44 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 77ms (Views: 46.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:21:13 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:22:16 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:36 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:37 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 61ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:23:59 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:00 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:00 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 42ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:12 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:24:13 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:26 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:27 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:49 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:50 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /color/green.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /datatables.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /fullcalendar.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /isotope.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /se7en-font.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /wizard.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:52 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /datatable-editable.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /daterange-picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.validate.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/moment.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /moment.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /morris.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /select2.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /spin.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 19:25:53 -0800
+Served asset /application.js - 304 Not Modified (1ms)
