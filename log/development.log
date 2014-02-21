@@ -11550,3 +11550,514 @@ ActionView::MissingTemplate (Missing template questions/index, application/index
 
 
   Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/cities/2/questions/" for 127.0.0.1 at 2014-02-20 20:06:08 -0800
+Processing by QuestionsController#index as HTML
+  Parameters: {"city_id"=>"2"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+Completed 500 Internal Server Error in 14ms
+
+ActionView::MissingTemplate (Missing template questions/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/apprentice/cityknow/app/views"
+  * "/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.2.3/app/views"
+):
+  actionpack (3.2.13) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.13) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.13) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.13) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.13) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.13) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.13) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.13) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.13) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:414:in `_run__1890842928075471449__process_action__3494688019049188278__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.13) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.13) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.13) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.13) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.13) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.13) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1496905053885720918__call__54146692470562473__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/cities/2/questions/1/answers/1" for 127.0.0.1 at 2014-02-20 20:06:23 -0800
+
+LoadError (Expected /Users/apprentice/cityknow/app/controllers/answers_controller.rb to define AnswersController):
+  activesupport (3.2.13) lib/active_support/dependencies.rb:503:in `load_missing_constant'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.13) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.13) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1496905053885720918__call__54146692470562473__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 60ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /application.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/bootstrap-switch.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /bootstrap-switch.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /bootstrap.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/color/gray.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /color/gray.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /bootstrap-editable.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/green.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /color/green.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/color/magenta.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /color/magenta.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/color/orange.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /color/orange.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colorpicker.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /colorpicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatables.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /datatables.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/datepicker.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /datepicker.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/daterange-picker.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /daterange-picker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/docs.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /docs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /dropzone.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/font-awesome.min.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /font-awesome.min.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /fullcalendar.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/isotope.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /isotope.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /jquery.fancybox.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.fileupload-ui.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /jquery.fileupload-ui.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/ladda-themeless.min.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /ladda-themeless.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/morris.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /morris.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pygments.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /pygments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/se7en-font.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /se7en-font.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /select2.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/social-buttons.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /social-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /summernote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/timepicker.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:34 -0800
+Served asset /timepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /typeahead.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wizard.css?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /wizard.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /address.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-colorpicker.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /bootstrap-colorpicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-editable.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /bootstrap-editable.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-fileupload.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /bootstrap-fileupload.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-switch.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /bootstrap-switch.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-timepicker.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /bootstrap-timepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-wysihtml5.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /bootstrap-wysihtml5.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datatable-editable.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /datatable-editable.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/date.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /date.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dropzone.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /dropzone.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/daterange-picker.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /daterange-picker.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/docs.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /docs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/excanvas.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /excanvas.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fitvids.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /fitvids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fullcalendar.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /fullcalendar.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gcal.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /gcal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/isotope_extras.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /isotope_extras.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.bootstrap.wizard.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.bootstrap.wizard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.easy-pie-chart.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.easy-pie-chart.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox.pack.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.fancybox.pack.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.inputmask.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.inputmask.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.isotope.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.isotope.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.mousewheel.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.mousewheel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.sparkline.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.sparkline.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.validate.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.vmap.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.vmap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.sampledata.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.vmap.sampledata.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.vmap.world.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /jquery.vmap.world.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ladda.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /ladda.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /main.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/mockjax.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /mockjax.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /modernizr.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/prettify.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /prettify.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /select2.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/respond.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /respond.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/raphael.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /raphael.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/skycons.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /skycons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/selectivizr-min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /selectivizr-min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spin.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /spin.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/styleswitcher.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /styleswitcher.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/summernote.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /summernote.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/typeahead.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysihtml5.min.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /wysihtml5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wysiwyg.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /wysiwyg.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo-mock.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /xeditable-demo-mock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/xeditable-demo.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /xeditable-demo.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-20 20:08:35 -0800
+Served asset /application.js - 304 Not Modified (9ms)

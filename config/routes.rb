@@ -3,7 +3,10 @@ CityKnow::Application.routes.draw do
 
   root :to => "pages#index"
   resources :cities do
-    resources :questions
+    resources :questions do
+      resources :answers do
+      end
+    end
   end
 
   # The priority is based upon order of creation:
