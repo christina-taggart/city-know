@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
   end
 
   def show
-    @answer = Answer.find(params[:answer_id])
+    @answer = Answer.find(params[:id])
   end
 
   def new
