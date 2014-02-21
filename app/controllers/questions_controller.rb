@@ -32,8 +32,9 @@ class QuestionsController < ApplicationController
 
 	def update
 		question = Question.find(params[:id])
+		city = City.find(params[:city_id])
 		if question.update_attributes(params[:question])
-			redirect_to city_post_path
+			redirect_to city_question_path(question, city)
 		else
 			erb :edit
 		end
