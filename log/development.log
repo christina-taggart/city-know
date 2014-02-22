@@ -92172,3 +92172,18 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 >>>>>>> controller-testing
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20140221002329)
+Migrating to CreateCities (20140221005941)
+Migrating to CreateQuestions (20140221011242)
+Migrating to CreateAnswers (20140221035117)
+Migrating to AddColumnsToUsers (20140221051855)
+Migrating to CreateVotes (20140222013548)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "votes" ("id" serial primary key, "user_id" integer, "voteable_id" integer, "voteable_type" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140222013548')
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml

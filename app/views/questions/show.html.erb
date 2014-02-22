@@ -1,8 +1,12 @@
 <div class="container">
   <%= link_to "Back to City Page", city_path(@city) %>
   <br/><br/>
-  <img data-id=<%= @question.id %>class="like_button" src="http://a.fastcompany.net/multisite_files/fastcompany/imagecache/inline-large/inline/2013/11/3021307-inline-fb-thumbsup-printpackaging.jpg" height="30" />
-  <p><%= pluralize(@question.vote_count, 'Vote') %> </p>
+
+  <%= link_to 'Upvote', votes_path(:voteable_id => @question.id, :voteable_type => "Question"), remote: true, method: :post, :class => 'vote' %>
+
+  <div class="vote-count-question">
+    <p><%= pluralize(@question.votes.count, 'Vote') %></p>
+  </div>
 
   <h3><%= @question.title %> </h3>
   <p><%= @question.body %></p>
