@@ -16,9 +16,11 @@ class QuestionsController < ApplicationController
 
 	def create
 		authenticate_user!
+		@user = current_user
 		@city = City.find(params[:city_id])
 		@question = @city.questions.build(params[:question])
 		if @question.save
+			@user.questions << @question
 			redirect_to city_question_path(@city, @question)
 		else
 			flash.now[:errors] = @question.errors.full_messages
@@ -44,7 +46,7 @@ class QuestionsController < ApplicationController
 		question = Question.find(params[:id])
 		city = City.find(params[:city_id])
 		if question.update_attributes(params[:question])
-			redirect_to city_question_path(question, city)
+			redirect_to city_question_path(city, question)
 		else
 			erb :edit
 		end
@@ -52,5 +54,7 @@ class QuestionsController < ApplicationController
 
 	def destroy
 		authenticate_user!
+		Question.find(params[:id]).destroy
+		redirect_to city_path(params[:city_id])
 	end
 end

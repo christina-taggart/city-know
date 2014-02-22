@@ -4,6 +4,9 @@
   <h3><%= @question.title %></h3>
   <p><%= @question.body %></p>
 
+  <% if current_user.id == @question.user_id %>
+    <%= link_to "Edit Question", edit_city_question_path(@city, @question) %> | <%= link_to "Delete Question", city_question_path(@city, @question), :method => 'delete' %>
+  <% end %>
   <br/><br/><br/>
   <h2>Answers</h2>
   <% if user_signed_in? %>
@@ -13,6 +16,9 @@
   <div class="answer">
     <p class="answer-body"><%= answer.body %></p>
     <p class="answer-user">Posted by <%= answer.user.name  unless answer.user.nil? %></p>
+    <% if current_user.id == answer.user_id %>
+      <%= link_to "Edit Answer", edit_city_question_answer_path(@city, @question, answer) %> | <%= link_to "Delete Answer", city_question_answer_path(@city, @question, answer), :method => 'delete' %>
+    <% end %>
   </div>
   <% end %>
 </div>
