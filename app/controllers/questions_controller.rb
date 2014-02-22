@@ -52,5 +52,7 @@ class QuestionsController < ApplicationController
 
 	def destroy
 		authenticate_user!
+		Question.find(params[:id]).destroy
+		redirect_to city_path(params[:city_id])
 	end
 end
