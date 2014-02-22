@@ -19,3 +19,14 @@
  .like_button {
   cursor: pointer;
  }
+
+ .wrapper {
+     overflow: auto;
+     height: 100%;
+     position: fixed;
+     background: lightgray;
+ }
+
+ .wrapper::-webkit-scrollbar {
+    display: none;
+}

@@ -1,11 +1,17 @@
 var Vote = {
   init: function() {
-    $('a.vote').on('ajax:success', this.updateVoteCount);
+    $('a.vote-question').on('ajax:success', this.updateQuestionVoteCount);
+    $('a.vote-answer').on('ajax:success', this.updateAnswerVoteCount);
   },
 
-  updateVoteCount: function(event, data) {
+  updateQuestionVoteCount: function(event, data) {
     $('.vote-count-question').html(data);
+  },
+
+  updateAnswerVoteCount: function(event, data) {
+    $(event.target).next()[0].innerHTML=data;
   }
+
 }
 
 $(function(){

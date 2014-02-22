@@ -2,7 +2,7 @@
   <%= link_to "Back to City Page", city_path(@city) %>
   <br/><br/>
 
-  <%= link_to 'Upvote', votes_path(:voteable_id => @question.id, :voteable_type => "Question"), remote: true, method: :post, :class => 'vote' %>
+  <%= link_to 'Upvote', votes_path(:voteable_id => @question.id, :voteable_type => "Question"), remote: true, method: :post, :class => 'vote-question' %>
 
   <div class="vote-count-question">
     <p><%= pluralize(@question.votes.count, 'Vote') %></p>
@@ -19,6 +19,13 @@
 
   <% @question.answers.each do |answer| %>
   <div class="answer">
+
+    <%= link_to 'Upvote', votes_path(:voteable_id => answer.id, :voteable_type => "Answer"), remote: true, method: :post, :class => 'vote-answer' %>
+
+    <div class="vote-count-answer">
+      <p><%= pluralize(answer.votes.count, 'Vote') %></p>
+    </div>
+
     <p class="answer-body"><%= answer.body %></p>
     <small class="answer-user">Posted by <%= answer.user.name  unless answer.user.nil? %></small>
     <% if current_user && current_user.id == answer.user_id %>
