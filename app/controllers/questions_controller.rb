@@ -48,6 +48,7 @@ class QuestionsController < ApplicationController
 		if question.update_attributes(params[:question])
 			redirect_to city_question_path(city, question)
 		else
+			flash.now[:errors] = @question.errors.full_messages
 			erb :edit
 		end
 	end

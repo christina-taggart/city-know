@@ -1,7 +1,11 @@
-<%= form_for @city do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <%= f.label :description %><br>
-  <%= f.text_area :description %><br>
-  <%= f.submit  %>
-<% end %>
+<div class="container">
+  <%= render 'layouts/errors' if flash[:errors] %>
+
+  <%= form_for @city do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %><br>
+    <%= f.submit  %>
+  <% end %>
+</div>

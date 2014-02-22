@@ -1,0 +1,7 @@
+<div class="container">
+<% flash[:errors].each do |error| %>
+  <div class="<%= flash_class(:error) %>">
+    <%= error %>
+  </div>
+<% end %>
+</div>

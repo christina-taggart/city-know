@@ -28,6 +28,7 @@ class AnswersController < ApplicationController
       @user.answers << @answer
       redirect_to city_question_path(@city, @question)
     else
+      flash.now[:errors] = @answer.errors.full_messages
       @errors = @city.errors.full_messages
       render :new
     end
@@ -48,6 +49,7 @@ class AnswersController < ApplicationController
     if @answer.update_attributes(params[:answer])
       redirect_to city_question_path(@city, @question)
     else
+      flash[:errors] = @answer.errors.full_messages
       redirect_to edit_city_question_answer_path(@city, @question, @answer)
     end
   end
