@@ -9,11 +9,8 @@
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="padding-top:60px">
   <%= render 'layouts/navbar' %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= render 'layouts/messages' %>
 <%= yield %>
 
 </body>

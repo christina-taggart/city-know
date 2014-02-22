@@ -1,4 +1,5 @@
 <div class="container">
+  <%= render 'layouts/errors' if flash[:errors] %>
   <%= form_for @city do |f| %>
     <div class="form-group">
       <%= f.label :name %><br>
