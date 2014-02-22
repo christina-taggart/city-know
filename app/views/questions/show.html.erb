@@ -1,7 +1,10 @@
 <div class="container">
   <%= link_to "Back to City Page", city_path(@city) %>
+  <br/><br/>
+  <img data-id=<%= @question.id %>class="like_button" src="http://a.fastcompany.net/multisite_files/fastcompany/imagecache/inline-large/inline/2013/11/3021307-inline-fb-thumbsup-printpackaging.jpg" height="30" />
+  <p><%= pluralize(@question.vote_count, 'Vote') %> </p>
 
-  <h3><%= @question.title %></h3>
+  <h3><%= @question.title %> </h3>
   <p><%= @question.body %></p>
 
   <% if current_user && current_user.id == @question.user_id %>
@@ -9,9 +12,7 @@
   <% end %>
   <br/><br/><br/>
   <h2>Answers</h2>
-  <% if user_signed_in? %>
-    <%= render :template => 'answers/new' %>
-  <% end %>
+
   <% @question.answers.each do |answer| %>
   <div class="answer">
     <p class="answer-body"><%= answer.body %></p>
@@ -20,5 +21,9 @@
       <%= link_to "Edit Answer", edit_city_question_answer_path(@city, @question, answer) %> | <%= link_to "Delete Answer", city_question_answer_path(@city, @question, answer), :method => 'delete' %>
     <% end %>
   </div>
+  <% end %>
+  <br/><br/>
+  <% if user_signed_in? %>
+    <%= render :template => 'answers/new' %>
   <% end %>
 </div>

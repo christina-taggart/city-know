@@ -3,6 +3,7 @@ class Question < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :city
   has_many :answers
+  has_many :votes, as: :voteable
 
 	validates :title, :body, :presence => true
 end
