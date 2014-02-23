@@ -8,6 +8,7 @@ gem 'devise'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'omniauth-facebook'
+gem 'debugger'
 
 group :assets do
   gem 'uglifier', '>= 1.0.3'
