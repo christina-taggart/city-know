@@ -25,12 +25,15 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_facebook_oauth(auth)
+    p "*" * 100
+    p Time.at(auth.credentials.expires_at)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
+      user.access_token = auth.credentials.token
       # user.image = auth.info.image # assuming the user model has an image
     end
   end
@@ -41,5 +44,17 @@ class User < ActiveRecord::Base
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def facebook
+    @facebook ||= Koala::Facebook::API.new(@access_token)
+    block_given? ? yield(@facebook) : @facebook
+  rescue
+    logger.info e.to_s
+    nil
+  end
+
+  def friends_count
+    #
   end
 end
