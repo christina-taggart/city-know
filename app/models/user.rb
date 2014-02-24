@@ -63,7 +63,7 @@ class User < ActiveRecord::Base
   end
 
   def all_friend_coords
-    friend_array = self.facebook.get_connection('me', 'friends?fields=id,name,location')
+    friend_array = self.facebook.get_connection('me', 'friends?fields=id,name,location,picture')
     location_array = friend_array.map { |f| f['location']['name'].split(',').first  if f['location'] }.uniq
     city_array = City.pluck(:name)
     filtered_cities = location_array & city_array
@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
       location = ""
       location = f['location']['name'].split(',').first if f['location']
       if filtered_cities.include?(location)
-        city_info_hash[location][:info][:friends] << { name: f['name'], id: f['id'] }
+        city_info_hash[location][:info][:friends] << { name: f['name'], id: f['id'], photo_url: f['picture']['data']['url'] }
       end
     end
     city_info_hash

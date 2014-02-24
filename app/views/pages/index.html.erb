@@ -21,6 +21,26 @@
     <p><%= city.country %></p>
   <% end %>
 </div>
+
+<style type="text/css">
+
+  .profile-pic {
+    width: 40px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .friend a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #map-canvas {
+    margin-top: 20px;
+  }
+
+</style>
 <script>
  var locations = <%= current_user.all_friend_coords.to_json.html_safe %>;
 
@@ -53,9 +73,11 @@
             var friends = marker.friends;
             var final_html = "";
             for(var i=0; i < friends.length; i++){
-              // debugger
 
-              final_html += '<p><a href="http://facbook.com/' + friends[i].id + '">' + friends[i].name + '</a></p>';
+              final_html += '<div class="friend"><img class="profile-pic" src="'
+              + friends[i].photo_url + '"/><p><a href="http://facbook.com/'
+              + friends[i].id + '">'
+              + friends[i].name + '</a></p></div>';
             }
             return final_html;
           }
