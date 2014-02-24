@@ -31,6 +31,7 @@ class QuestionsController < ApplicationController
 	def show
 		@city = City.find(params[:city_id])
 		@question = Question.find(params[:id])
+		@subscription = Subscription.where(question_id: @question.id, user_id: current_user.id)
 		@answer = Answer.new
 	end
 

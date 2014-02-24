@@ -12,8 +12,11 @@
             <div class="panel-heading">Voted Questions</div>
             <ul class="nav nav-stacked">
                 <% current_user.voted_questions.each do |question| %>
+                  <% subscription = Subscription.where(user_id: current_user.id, question_id: question.id) %>
+                  <% new_answers = question.answers.where("created_at > ?", subscription.first.last_visit_time) if subscription.first %>
+                  <% notification_count = new_answers.length if new_answers %>
                   <% city = City.find(question.city_id) %>
-                  <li><%= link_to question.title, city_question_path(city, question) %></li>
+                  <li><div class="question-link-container"><%= link_to question.title.slice(0..15) + '...', city_question_path(city, question) %> <span class="notifications"><%= notification_count if notification_count &&notification_count > 0 %></span></div></li>
                 <% end %>
             </ul>
 

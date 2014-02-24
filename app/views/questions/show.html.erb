@@ -1,4 +1,9 @@
 <div class="container">
+  <% if @subscription.first %>
+    <% @subscription.first.last_visit_time = Time.now  %>
+    <% @subscription.first.save %>
+  <% end %>
+
   <br/><br/>
   <%= link_to "Back to City Page", city_path(@city) %>
   <br/><br/>
