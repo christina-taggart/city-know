@@ -962,7 +962,7 @@ Dhaka,,Bangladesh,23.7,90.4
 Khulna,,Bangladesh,22.84,89.55
 Rajshahi,,Bangladesh,24.35,88.63
 Dar-el-Beida,Casablanca,Morocco,33.6,-7.63
-F?s,Fes,Morocco,34.04,-4.99
+Fes,Fes,Morocco,34.04,-4.99
 Marrakech,,Morocco,31.63,-8.01
 Rabat,,Morocco,34.01,-6.83
 Maputo,,Mozambique,-25.96,32.57
@@ -997,16 +997,16 @@ Multan,,Pakistan,30.2,71.41
 Peshawar,,Pakistan,34,71.54
 Quetta,,Pakistan,30.2,67.01
 Rawalpindi,,Pakistan,33.6,73.04
-Ciudad de Panam? (Panama City),Panama,Panama,9,-79.51
-Asunci?n,Asuncion,Paraguay,-25.3,-57.62
+Ciudad de Panama (Panama City),Panama,Panama,9,-79.51
+Asuncion,Asuncion,Paraguay,-25.3,-57.62
 Arequipa,,Peru,-16.39,-71.52
 Lima,,Peru,-12.08,-77.04
 Cebu,,Philippines,10.42,123.79
 Davao,,Philippines,7.08,125.61
 Manila,,Philippines,14.61,120.96
 Zamboanga,,Philippines,6.9,122.06
-Krak?w,Krakow,Poland,50.06,19.94
-L?dz,Lodz,Poland,51.77,19.47
+Krakaw,Krakow,Poland,50.06,19.94
+Lodz,Lodz,Poland,51.77,19.47
 Warszawa,Warsaw,Poland,52.24,21.01
 Lisboa,Lisbon,Portugal,38.72,-9.12
 Porto,,Portugal,41.16,-8.58
@@ -1057,7 +1057,7 @@ Madrid,,Spain,40.44,-3.69
 Valencia,,Spain,39.47,-0.36
 Al-Khartum,Khartoum,Sudan,15.55,32.52
 Stockholm,,Sweden,59.33,17.99
-Z?rich,Zurich,Switzerland,47.4,8.53
+Zurich,Zurich,Switzerland,47.4,8.53
 Baixada Santista,,Brazil,-23.95,-46.36
 Bel?m,Belem,Brazil,-1.43,-48.49
 Belo Horizonte,,Brazil,-19.85,-43.9
@@ -1069,24 +1069,24 @@ Curitiba,,Brazil,-25.43,-49.28
 Florian?polis,Florianopolis,Brazil,-27.57,-48.61
 Fortaleza,,Brazil,-3.78,-38.58
 Goi?nia,Goiania,Brazil,-16.72,-49.25
-Grande S?o Lu?s,Sao Luis,Brazil,-2.51,-44.3
+Grande Sao Luis,Sao Luis,Brazil,-2.51,-44.3
 Grande Vit?ria,Vitoria,Brazil,-20.3,-40.35
-Jo?o Pessoa,Joao Pessoa,Brazil,-7.12,-34.86
-Macei?,Maceio,Brazil,-9.67,-35.74
+Joao Pessoa,Joao Pessoa,Brazil,-7.12,-34.86
+Maceio,Maceio,Brazil,-9.67,-35.74
 Manaus,,Brazil,-3.12,-60.01
 Natal,,Brazil,-5.8,-35.21
 Norte/Nordeste Catarinense,,Brazil,-26.32,-48.84
-P?rto Alegre,Porto Alegre,Brazil,-30.04,-51.2
+Porto Alegre,Porto Alegre,Brazil,-30.04,-51.2
 Recife,,Brazil,-8.08,-34.91
 Rio de Janeiro,,Brazil,-22.72,-43.45
 Salvador,,Brazil,-12.99,-38.48
-S?o Paulo,Sao Paulo,Brazil,-23.58,-46.62
+Sao Paulo,Sao Paulo,Brazil,-23.58,-46.62
 Teresina,,Brazil,-5.1,-42.8
 Dimashq,Damascus,Syrian Arab Republic,33.49,36.29
 Halab,Aleppo,Syrian Arab Republic,36.21,37.15
 Hims,Homs,Syrian Arab Republic,34.73,36.71
 Krung Thep,Bangkok,Thailand,13.75,100.51
-Lom?,Lome,Togo,6.1,1.2
+Lome,Lome,Togo,6.1,1.2
 Dubayy,Dubai,United Arab Emirates,25.27,55.32
 Adana,,Turkey,37,35.32
 Ankara,,Turkey,39.92,32.85
@@ -1126,7 +1126,7 @@ Cleveland,,United States of America,41.39,-81.72
 "Columbus, Ohio",Columbus,United States of America,40.04,-82.99
 Dallas-Fort Worth,Dallas,United States of America,32.76,-96.66
 Dayton,,United States of America,39.75,-84.19
-Denver-Aurora,Denver,United States of America,39.57,-105.07
+Denver,Denver-Aurora,United States of America,39.57,-105.07
 Detroit,,United States of America,42.39,-83.07
 El Paso,,United States of America,31.77,-106.45
 Hartford,,United States of America,41.76,-72.7
@@ -1136,15 +1136,15 @@ Indianapolis,,United States of America,39.81,-86.13
 "Jacksonville, Florida",Jacksonville,United States of America,30.33,-81.65
 Kansas City,,United States of America,38.99,-94.62
 Las Vegas,,United States of America,36.17,-115.13
-Los Angeles-Long Beach-Santa Ana,Los Angeles,United States of America,34,-118.25
+Los Angeles,Los Angeles-Long Beach-Santa Ana,United States of America,34,-118.25
 Louisville,,United States of America,38.25,-85.76
 Memphis,,United States of America,35.11,-90
 Miami,,United States of America,25.83,-80.27
 Milwaukee,,United States of America,43.06,-87.99
 Minneapolis-St. Paul,Minneapolis,United States of America,44.92,-93.3
-Nashville-Davidson,Nashville,United States of America,36.14,-86.81
+Nashville,Nashville-Davidson,United States of America,36.14,-86.81
 New Orleans,,United States of America,29.95,-90.09
-New York-Newark,New York,United States of America,40.7,-73.9
+New York,New York-Newark,United States of America,40.7,-73.9
 Oklahoma City,,United States of America,35.48,-97.53
 Orlando,,United States of America,28.54,-81.37
 Philadelphia,,United States of America,39.92,-75.21
@@ -1159,7 +1159,8 @@ Sacramento,,United States of America,38.56,-121.42
 Salt Lake City,,United States of America,40.69,-111.89
 San Antonio,,United States of America,29.42,-98.52
 San Diego,,United States of America,32.76,-117.12
-San Francisco-Oakland,San Francisco,United States of America,37.79,-122.38
+San Francisco,San Francisco,United States of America,37.79,-122.38
+Oakland,,United States of America,37.79,-122.38
 San Jose,,United States of America,37.3,-121.84
 Seattle,,United States of America,47.58,-122.31
 St. Louis,,United States of America,38.63,-90.34

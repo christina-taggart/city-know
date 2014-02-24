@@ -1,3 +1,5 @@
+require 'json'
+
 class User < ActiveRecord::Base
   has_many :answers
   has_many :questions
@@ -27,7 +29,7 @@ class User < ActiveRecord::Base
   def self.find_for_facebook_oauth(auth)
     p "*" * 100
     p Time.at(auth.credentials.expires_at)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
+    where(auth.slice(:provider, :uid)).first_or_create! do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
@@ -56,7 +58,26 @@ class User < ActiveRecord::Base
   end
 
   def friends_in_city(city)
-    friend_array = self.facebook.get_connection('me', 'friends?fields=name,location')
+    friend_array = self.facebook.get_connection('me', 'friends?fields=id,name,location')
     friend_array.select { |f| f['location']['name'].split(',').first == city if f['location']}
+  end
+
+  def all_friend_coords
+    friend_array = self.facebook.get_connection('me', 'friends?fields=id,name,location')
+    location_array = friend_array.map { |f| f['location']['name'].split(',').first  if f['location'] }.uniq
+    city_array = City.pluck(:name)
+    filtered_cities = location_array & city_array
+    city_objects = filtered_cities.map { |city| City.find_by_name(city) }
+    city_info_hash = {}
+    city_objects.each { |city| city_info_hash[city.name] = { info: { lat: city.lat, long: city.long, friends: [] } } }
+
+    friend_array.each do |f|
+      location = ""
+      location = f['location']['name'].split(',').first if f['location']
+      if filtered_cities.include?(location)
+        city_info_hash[location][:info][:friends] << { name: f['name'], id: f['id'] }
+      end
+    end
+    city_info_hash
   end
 end
