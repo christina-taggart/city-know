@@ -95741,3 +95741,747 @@ ActionController::RoutingError (No route matches [GET] "/assets/jquery-1.10.2.mi
 
 
   Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20140221002329)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255) DEFAULT '' NOT NULL, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221002329')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCities (20140221005941)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "cities" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221005941')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestions (20140221011242)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "user_id" integer, "city_id" integer, "title" character varying(255), "body" text, "vote_count" integer DEFAULT 1, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221011242')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAnswers (20140221035117)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "answers" ("id" serial primary key, "user_id" integer, "question_id" integer, "body" text, "vote_count" integer DEFAULT 1, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221035117')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnsToUsers (20140221051855)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "provider" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "uid" character varying(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140221051855')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 17:48:19 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered pages/index.html.erb within layouts/application (3.6ms)
+Compiled application.css  (0ms)  (pid 14239)
+Compiled jquery.js  (1ms)  (pid 14239)
+Compiled jquery_ujs.js  (0ms)  (pid 14239)
+Compiled application.js  (36ms)  (pid 14239)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 121ms (Views: 69.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:48:19 -0800
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:48:19 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:48:19 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:48:19 -0800
+Served asset /application.js - 200 OK (5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 17:48:22 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 17:50:57 -0800
+Processing by PagesController#index as HTML
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" 
+  Rendered pages/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:50:57 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:50:57 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:50:57 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:50:57 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 17:50:58 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 17:51:43 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:51:43 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:43 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:43 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:43 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 17:51:44 -0800
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 17:51:56 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered pages/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 105ms (Views: 49.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:51:57 -0800
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:57 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:57 -0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:57 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 17:51:58 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQA5KVhmIT_WewIM-34vhEVzF1pBYZkjqC_L-NaVwxCbnI77qzqYHpWPr-TZQRVQX7cBemZtnikkVVFNsvC5Z-GM6JirmbS2inRZW6eFjl3FMBskJvb6972eHsa5xijqICRrPi-bjwA4zs_zZG7axMU_zzvrsfaOE4zIX5oi7w8X5hkW9WrrA5TJ0LGfj3JoH30PaZyqo5jopERyXz_vE65Thw6CDfGpjYMdXdvPzCdR11Rj_CBl0GHeq_02AYjgipxFzJqPf3rO13cQli4gvVSBrg5cauCo7KgDzIO25OKr1_H9qTTm7fpbOqyN4Qhfk-E&state=492d6b03e6cb62d56c3336e072fa8bbb8fafe34a02e43af7" for 127.0.0.1 at 2014-02-23 17:51:58 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQA5KVhmIT_WewIM-34vhEVzF1pBYZkjqC_L-NaVwxCbnI77qzqYHpWPr-TZQRVQX7cBemZtnikkVVFNsvC5Z-GM6JirmbS2inRZW6eFjl3FMBskJvb6972eHsa5xijqICRrPi-bjwA4zs_zZG7axMU_zzvrsfaOE4zIX5oi7w8X5hkW9WrrA5TJ0LGfj3JoH30PaZyqo5jopERyXz_vE65Thw6CDfGpjYMdXdvPzCdR11Rj_CBl0GHeq_02AYjgipxFzJqPf3rO13cQli4gvVSBrg5cauCo7KgDzIO25OKr1_H9qTTm7fpbOqyN4Qhfk-E", "state"=>"492d6b03e6cb62d56c3336e072fa8bbb8fafe34a02e43af7"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '524941283' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'amahesh0501@gmail.com' LIMIT 1
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["created_at", Mon, 24 Feb 2014 01:51:59 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "amahesh0501@gmail.com"], ["encrypted_password", "$2a$10$nLBM46jMshuQQwGzqoso1ONU4ZGZ.arDQPRdC4CuDcN1YjfAj0TFy"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Aditya Mahesh"], ["provider", "facebook"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["uid", "524941283"], ["updated_at", Mon, 24 Feb 2014 01:51:59 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2014-02-24 01:51:59.158576', "current_sign_in_at" = '2014-02-24 01:51:59.158576', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-02-24 01:51:59.159390' WHERE "users"."id" = 1
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 218ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 17:51:59 -0800
+Processing by PagesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered pages/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:51:59 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:59 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:59 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:51:59 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2014-02-23 17:52:01 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 17:52:01 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:52:02 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:52:02 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:52:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:52:02 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 17:52:09 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQB9uKdQwTm-U0zPCwv0tWA70s0YvNm7QvvhX5OppinhMUbsicGXYqsPLcoJA2M6dhJGFkVC4AdrHkznONhN16Oralh4hf_BHrRJID49pLlNU8DeyRyHW2l7BCx61Wi1WBHLYWPsODYK2ZLGGaNPL_LlBfwGxbo431Dr4CCGnFeD2S6f4xJzJNJlnDdDZybxwYDNG7wQUMA8D4C00KyncoZA5sBJ9blL07U3XatyWH2DSA-HNjBM9uYU2C0S4XO3TxhwJyTnMYNMyVSmNPhFlwey1ACw5nF13ZbPv_3OgFcYx8PSst1Bi8fm0VV6qW3BgHs&state=c2c5b267c1f94a2b17a9ccd84bb5cf4325c5510a2a57eae9" for 127.0.0.1 at 2014-02-23 17:52:14 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB9uKdQwTm-U0zPCwv0tWA70s0YvNm7QvvhX5OppinhMUbsicGXYqsPLcoJA2M6dhJGFkVC4AdrHkznONhN16Oralh4hf_BHrRJID49pLlNU8DeyRyHW2l7BCx61Wi1WBHLYWPsODYK2ZLGGaNPL_LlBfwGxbo431Dr4CCGnFeD2S6f4xJzJNJlnDdDZybxwYDNG7wQUMA8D4C00KyncoZA5sBJ9blL07U3XatyWH2DSA-HNjBM9uYU2C0S4XO3TxhwJyTnMYNMyVSmNPhFlwey1ACw5nF13ZbPv_3OgFcYx8PSst1Bi8fm0VV6qW3BgHs", "state"=>"c2c5b267c1f94a2b17a9ccd84bb5cf4325c5510a2a57eae9"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '524941283' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2014-02-24 01:52:15.299779', "sign_in_count" = 2, "updated_at" = '2014-02-24 01:52:15.300437' WHERE "users"."id" = 1
+  [1m[36m (22.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 22.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 17:52:15 -0800
+Processing by PagesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered pages/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:52:15 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:52:15 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:52:15 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:52:15 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20140221002329)
+Migrating to CreateCities (20140221005941)
+Migrating to CreateQuestions (20140221011242)
+Migrating to CreateAnswers (20140221035117)
+Migrating to AddColumnsToUsers (20140221051855)
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20140221002329)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255) DEFAULT '' NOT NULL, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "oauth_token" character varying(255), "oauth_expires_at" time, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221002329')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCities (20140221005941)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "cities" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221005941')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestions (20140221011242)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "questions" ("id" serial primary key, "user_id" integer, "city_id" integer, "title" character varying(255), "body" text, "vote_count" integer DEFAULT 1, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221011242')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAnswers (20140221035117)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "answers" ("id" serial primary key, "user_id" integer, "question_id" integer, "body" text, "vote_count" integer DEFAULT 1, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140221035117')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnsToUsers (20140221051855)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "provider" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "uid" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140221051855')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 18:27:02 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 116ms (Views: 61.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:27:02 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:27:02 -0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:27:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:27:02 -0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 18:27:04 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQA4x7mpWdMb1XXfev3MkxOtZD1fwa46molaf3QQ2DFNF_YR_-Wyj24aQZVKkovT3PCgVu5q1Dusq59EhVufVUV2gXtg5HMrsTM9abcaVYIVpQnaqv72H1hX87B7nB82rlH8DVzMI5Wc4iC8Q8Gc_LFS-ao00_lI6cPPvQyVNE1lUsCo9WchAbgmRj97mI4bqgBpmjTNDsq4vK_qIkw1pgmEGs2yk4wlH-w4ksRCt2sUWzsIxMcuI-rGk-ydkBKXBVthEyRstRrlN36ZoTbDAj7N_UO8_jXVTy_f7Vf8LtIsg4CSJbJbkm83D7H9Jk-mJxs&state=34be4a9147b08d0ef813939828496898ab4591226fe9b1e0" for 127.0.0.1 at 2014-02-23 18:27:04 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQA4x7mpWdMb1XXfev3MkxOtZD1fwa46molaf3QQ2DFNF_YR_-Wyj24aQZVKkovT3PCgVu5q1Dusq59EhVufVUV2gXtg5HMrsTM9abcaVYIVpQnaqv72H1hX87B7nB82rlH8DVzMI5Wc4iC8Q8Gc_LFS-ao00_lI6cPPvQyVNE1lUsCo9WchAbgmRj97mI4bqgBpmjTNDsq4vK_qIkw1pgmEGs2yk4wlH-w4ksRCt2sUWzsIxMcuI-rGk-ydkBKXBVthEyRstRrlN36ZoTbDAj7N_UO8_jXVTy_f7Vf8LtIsg4CSJbJbkm83D7H9Jk-mJxs", "state"=>"34be4a9147b08d0ef813939828496898ab4591226fe9b1e0"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '524941283' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'amahesh0501@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "oauth_expires_at", "oauth_token", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"  [["created_at", Mon, 24 Feb 2014 02:27:05 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "amahesh0501@gmail.com"], ["encrypted_password", "$2a$10$mvpEba4vkc2flr.V2oNMguXQ24ShWekDx4iDe6unuh.kVvxwoxkc6"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Aditya Mahesh"], ["oauth_expires_at", 2014-04-24 18:51:57 -0700], ["oauth_token", "CAAFhYEMkx8MBAEKom4euW1k7ZCSg96ITFERwTC3O2kwlCRj27spLsLZA0gbnuZB4INv0498U0us9CrS1BgDHMdKGlzZAtMNcGAVetN8xSaqDHX0lT26cm0SmZCOvxNiTVOmPVdHMcIKQQDKkoZBVcwfaFcSxjfTZB5dyZBAH1GvngZBKrdDVuvM5yoWCHMYyeWDEZD"], ["provider", "facebook"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["uid", "524941283"], ["updated_at", Mon, 24 Feb 2014 02:27:05 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-02-24 02:27:05.046943', "current_sign_in_at" = '2014-02-24 02:27:05.046943', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-02-24 02:27:05.047989' WHERE "users"."id" = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 169ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 18:27:05 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:27:05 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:27:05 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:27:05 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:27:05 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2014-02-23 19:01:01 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:01:01 -0800
+Processing by PagesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities" 
+  Rendered pages/index.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 61ms (Views: 53.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:01:01 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:01:01 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:01:01 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:01:01 -0800
+Served asset /jquery.js - 304 Not Modified (28ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 19:01:02 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQBGFxsNF0WlnJVuNo9DTSQEo7N9n7YZLDvpYmQ864fQLeKbO5w8mOayKkE0aQhOhYhHBYwg8ZqqYy1tc74_Xu7SKqYRR7V7rELry2vQ_SBr079VLtLT_zRchoUaW6EUmuKbOCLnzPRA7d3AkONnmKQr8sEbhKBsGwqCblfDLZKUhTDDAuKJZulM6HqHs8cTyT53QLzTU0-BWylh_qJ9fYAuisRUSK0qmClxHaKSyUBNwfmb54ZhFs8sppyKGmpwXQPITUh-wO9vPUL44UQsM93HAJhl2bbF4iePvQMvNvAeWB8ANyny7Z71ouOIFXe_vHk&state=a4daeb5a02f4560d4575e810c9092230c70175e7790bea9b" for 127.0.0.1 at 2014-02-23 19:01:10 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBGFxsNF0WlnJVuNo9DTSQEo7N9n7YZLDvpYmQ864fQLeKbO5w8mOayKkE0aQhOhYhHBYwg8ZqqYy1tc74_Xu7SKqYRR7V7rELry2vQ_SBr079VLtLT_zRchoUaW6EUmuKbOCLnzPRA7d3AkONnmKQr8sEbhKBsGwqCblfDLZKUhTDDAuKJZulM6HqHs8cTyT53QLzTU0-BWylh_qJ9fYAuisRUSK0qmClxHaKSyUBNwfmb54ZhFs8sppyKGmpwXQPITUh-wO9vPUL44UQsM93HAJhl2bbF4iePvQMvNvAeWB8ANyny7Z71ouOIFXe_vHk", "state"=>"a4daeb5a02f4560d4575e810c9092230c70175e7790bea9b"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '524941283' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'amahesh0501@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "oauth_expires_at", "oauth_token", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"  [["created_at", Mon, 24 Feb 2014 03:01:11 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "amahesh0501@gmail.com"], ["encrypted_password", "$2a$10$hnpEYd7G3RGTZteaYkm8/.v7Nr1kijhusJ98zeYubJvUJhvSvksRu"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Aditya Mahesh"], ["oauth_expires_at", 2014-04-24 18:51:58 -0700], ["oauth_token", "CAAFhYEMkx8MBADQvpNzc4wZADfi7tJQWNbtHp6wrGx2e1VkZCy5MZAZCr3TWt9UBR0IZBdSLyLoQiqdZBCmwIZAJGEMnWTBXjOLfoMDxg5skfd9EZAnFH0IlOZBABIc9G06MB20uxp6IZCZBZBdaRXTWVKmN8d8mtK2esZAHOoNPj8ffso0dOLstRaspiWy2XyYzYUz4ZD"], ["provider", "facebook"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["uid", "524941283"], ["updated_at", Mon, 24 Feb 2014 03:01:11 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-02-24 03:01:11.259217', "current_sign_in_at" = '2014-02-24 03:01:11.259217', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-02-24 03:01:11.260107' WHERE "users"."id" = 2[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 176ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:01:11 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:01:11 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:01:11 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:01:11 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:01:11 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2014-02-23 19:20:26 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:20:26 -0800
+Processing by PagesController#index as HTML
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" 
+  Rendered pages/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:20:26 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:20:26 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:20:26 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:20:26 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 19:20:27 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQC8z5b80m-gtLPZcDnlOOHyUFWVHrs40DUqm0LKj48BpiwOrav-gZWE0-W2_5mmWVkZJs4DRRXWYFD9zpa0khEt5SebQB-9Q5AxT_EjhY3bQYMpVI9H1E4yHfQ03bPNA9SzfZQiosIOgzMAVrzOUvTW2OAp_c5NCvi3YRzvOhC1WQsUNU_6M7IZgGf_RiXZuVbF4fjGfGfYurRBpyAcqlJrgtnkOE4iKMCPObonGrLGm56UM_hLv-b5aexVwP_An52aANkry3-0-mlc60kUXVco27VI8UDupRJjBqIHTExKHdi2yZ9dTWMimHeJlx1hE9c&state=dd9ca05e04122089f261442ba6f04f61fbc9a2228d6b8986" for 127.0.0.1 at 2014-02-23 19:20:27 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC8z5b80m-gtLPZcDnlOOHyUFWVHrs40DUqm0LKj48BpiwOrav-gZWE0-W2_5mmWVkZJs4DRRXWYFD9zpa0khEt5SebQB-9Q5AxT_EjhY3bQYMpVI9H1E4yHfQ03bPNA9SzfZQiosIOgzMAVrzOUvTW2OAp_c5NCvi3YRzvOhC1WQsUNU_6M7IZgGf_RiXZuVbF4fjGfGfYurRBpyAcqlJrgtnkOE4iKMCPObonGrLGm56UM_hLv-b5aexVwP_An52aANkry3-0-mlc60kUXVco27VI8UDupRJjBqIHTExKHdi2yZ9dTWMimHeJlx1hE9c", "state"=>"dd9ca05e04122089f261442ba6f04f61fbc9a2228d6b8986"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '524941283' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'amahesh0501@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "oauth_expires_at", "oauth_token", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"  [["created_at", Mon, 24 Feb 2014 03:20:27 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "amahesh0501@gmail.com"], ["encrypted_password", "$2a$10$DEObGewVTj7YHCKkW/OiK.Eqt8xagStT8sKGDnaKuoSTPl9u/52pa"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Aditya Mahesh"], ["oauth_expires_at", 2014-04-24 18:51:58 -0700], ["oauth_token", "CAAFhYEMkx8MBANKw3iwEEGWDYUnOXlvQbEBtjMyyKOUwonIYUlZCob1UJurPl19O75zCaQK09aczTRQG88vays5CzmfzlZAOyjnJndJBjcykEzg2GrJ59szslwOgd8osR2P0m2ZAwIbhNEWvAwATCE4CSZCTqHZCJflcofdYgRs1skurfbSuxBQLrSPUy8kkZD"], ["provider", "facebook"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["uid", "524941283"], ["updated_at", Mon, 24 Feb 2014 03:20:27 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-02-24 03:20:28.000518', "current_sign_in_at" = '2014-02-24 03:20:28.000518', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-02-24 03:20:28.001052' WHERE "users"."id" = 3[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 91ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:20:28 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:20:28 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:20:28 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:20:28 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:20:28 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:30:40 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 117ms (Views: 60.0ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:30:40 -0800
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:30:40 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:30:40 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:30:40 -0800
+Served asset /application.js - 304 Not Modified (40ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 19:30:42 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQAVNVXg9peHCGRcWOGd5wKvM7mXGKOZUFb-w6Ps0ZezBKCszaFP_6c503gf1zH1ZXGb4JfI0ZQsue9qedrO-FCNTYRle3l5OnFSaLmUYIW31B_fDvyCe6qxDsZvDKY-v9b-H7dTDfSm1Cj29KuQfmQ_qd8c7XAfs2SCo4uqps3jdEJwTw9zyAgMW7ec8KxfI5GYMLDK2DJO09Rea-CD1bZoeB2EToO6A6OlmVm218KOzqrcmssvRjEIxha6Bm0Gr7jQWpqha7NbAv6V8PaEnFJXHpLEsG6lRKytdPNVgTdP2jP4u8Ywp7StT_AZkwwJ-QQ&state=b3e918cb2dcf5a948756e258ad9d0ef0ce71127917786003" for 127.0.0.1 at 2014-02-23 19:30:47 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAVNVXg9peHCGRcWOGd5wKvM7mXGKOZUFb-w6Ps0ZezBKCszaFP_6c503gf1zH1ZXGb4JfI0ZQsue9qedrO-FCNTYRle3l5OnFSaLmUYIW31B_fDvyCe6qxDsZvDKY-v9b-H7dTDfSm1Cj29KuQfmQ_qd8c7XAfs2SCo4uqps3jdEJwTw9zyAgMW7ec8KxfI5GYMLDK2DJO09Rea-CD1bZoeB2EToO6A6OlmVm218KOzqrcmssvRjEIxha6Bm0Gr7jQWpqha7NbAv6V8PaEnFJXHpLEsG6lRKytdPNVgTdP2jP4u8Ywp7StT_AZkwwJ-QQ", "state"=>"b3e918cb2dcf5a948756e258ad9d0ef0ce71127917786003"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '524941283' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'amahesh0501@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "oauth_expires_at", "oauth_token", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"  [["created_at", Mon, 24 Feb 2014 03:30:47 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "amahesh0501@gmail.com"], ["encrypted_password", "$2a$10$Os76hRoZfIAzwfYelkD52OYDjIMvFiknTdQW0h2Q8KmteXjTs6udK"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Aditya Mahesh"], ["oauth_expires_at", 2014-04-24 18:51:58 -0700], ["oauth_token", "CAAFhYEMkx8MBAD94joJzRTZCCe79Y2xA1RNQLwkDepJzAspmKPgKxtHoVZC6zEKS6QcoHllKU8AQM71KT7MQL5qM0u0FMZBo6yjx8iFomQhk6bZCWkSYLyBUV0Ie6OkSvQkhZBS04Wilsmhb0vmqtkn33l9C4Jykkdrwzfcba5FbsjHt5QCSGNYmPJvsyDqUZD"], ["provider", "facebook"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["uid", "524941283"], ["updated_at", Mon, 24 Feb 2014 03:30:47 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-02-24 03:30:47.733227', "current_sign_in_at" = '2014-02-24 03:30:47.733227', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-02-24 03:30:47.734122' WHERE "users"."id" = 4[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 168ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:30:47 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:30:47 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:30:47 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:30:47 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:30:47 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:33:00 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 116ms (Views: 60.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:33:00 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:33:00 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:33:00 -0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:33:00 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-02-23 19:33:01 -0800
+
+
+Started GET "/users/auth/facebook/callback?code=AQDBW_drhL-Is57zxQrzzStIm40rSZYmRYLKXREa9ZISRD6kP4yTWEnULqCUNjvYIlNw-9pGkKwfVZx4Fl1VQRf9EvorLMlras5JM3IZ14xSPKA7bIpz7E6pM9ojvoioENHL16hPEH1NfGuTCJXRI-6tqAh4jAxuLMtkDa0qU4FvjzgT0ADFiHRJK_dJ4qABEIVVX35831MeZhE6hvyfkAsFpyp1CoBtig-HF7KzS6ER2ROzWOn4BJ87jeVQn_7xqy-jqaKgbsZ6soxSUvYn-JGEkBnJoYUYpOr2_8yBPnnknKpWOpI0nmV2pmvU-GH4yQs&state=363e24a0a40cafb79624ff6f2466c5cc2bcdfc87c7c5df77" for 127.0.0.1 at 2014-02-23 19:33:04 -0800
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDBW_drhL-Is57zxQrzzStIm40rSZYmRYLKXREa9ZISRD6kP4yTWEnULqCUNjvYIlNw-9pGkKwfVZx4Fl1VQRf9EvorLMlras5JM3IZ14xSPKA7bIpz7E6pM9ojvoioENHL16hPEH1NfGuTCJXRI-6tqAh4jAxuLMtkDa0qU4FvjzgT0ADFiHRJK_dJ4qABEIVVX35831MeZhE6hvyfkAsFpyp1CoBtig-HF7KzS6ER2ROzWOn4BJ87jeVQn_7xqy-jqaKgbsZ6soxSUvYn-JGEkBnJoYUYpOr2_8yBPnnknKpWOpI0nmV2pmvU-GH4yQs", "state"=>"363e24a0a40cafb79624ff6f2466c5cc2bcdfc87c7c5df77"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '524941283' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'amahesh0501@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "oauth_expires_at", "oauth_token", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"  [["created_at", Mon, 24 Feb 2014 03:33:05 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "amahesh0501@gmail.com"], ["encrypted_password", "$2a$10$pOTngKHaWqhW34UbMjR63.PYLT64xZKjk4FVTNu/HrOEp5JBHLsSu"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Aditya Mahesh"], ["oauth_expires_at", 2014-04-24 18:51:58 -0700], ["oauth_token", "CAAFhYEMkx8MBAHsYQFCFLbSViLoLlTeZCCuGyVhEqeqpLPKbUb2nW32HpU0pbk6oxcFUaRXlVQTICAwvAsPYCI57T7fxf2BRCMSjf0ZBXeM4j8SqR3WewpclOPpiIao8qjHkr3NYlTUGETWIhHjkjidDZAnlfvftyjwagVzuXZBok6yZAYCZA55H8USqazawMZD"], ["provider", "facebook"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["uid", "524941283"], ["updated_at", Mon, 24 Feb 2014 03:33:05 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-02-24 03:33:05.925853', "current_sign_in_at" = '2014-02-24 03:33:05.925853', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-02-24 03:33:05.926707' WHERE "users"."id" = 5[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 168ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:33:05 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:33:05 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:33:06 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:33:06 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:33:06 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:58:45 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (63.7ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 78ms (Views: 65.8ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:58:45 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:58:45 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:58:45 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:58:45 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 19:58:48 -0800
+Processing by PagesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 19:58:48 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 19:58:48 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 19:58:48 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 19:58:48 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at 2014-02-23 20:00:53 -0800
+Processing by CitiesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-23 20:00:53 -0800
+Processing by PagesController#index as HTML
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 20:00:53 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 20:00:53 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 20:00:53 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 20:00:53 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m

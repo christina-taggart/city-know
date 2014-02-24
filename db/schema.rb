@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(:version => 20140221051855) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "oauth_token"
+    t.time     "oauth_expires_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "provider"
