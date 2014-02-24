@@ -1,24 +1,54 @@
 <div class="container">
+  <br/><br/>
   <%= link_to "Back to City Page", city_path(@city) %>
+  <br/><br/>
 
-  <h3><%= @question.title %></h3>
-  <p><%= @question.body %></p>
+  <div class="row">
+    <div class="col-md-1">
+      <%= link_to image_tag("http://elementcreative.com/_assets/img/icon_thumbsup.png"), votes_path(:voteable_id => @question.id, :voteable_type => "Question"), remote: true, method: :post, :class => 'vote-question' %>
+      <div class="vote-count-question">
+        <%= pluralize(@question.votes.count, 'Vote') %>
+      </div>
+    </div>
+    <div class="col-md-11">
+      <h3><%= @question.title %> </h3>
+      <p><%= @question.body %></p>
+      <% if current_user && current_user.id == @question.user_id %>
+      <%= link_to "Edit Question", edit_city_question_path(@city, @question) %> | <%= link_to "Delete Question", city_question_path(@city, @question), :method => 'delete' %>
+      <% end %>
+    </div>
+  </div>
 
-  <% if current_user && current_user.id == @question.user_id %>
-    <%= link_to "Edit Question", edit_city_question_path(@city, @question) %> | <%= link_to "Delete Question", city_question_path(@city, @question), :method => 'delete' %>
-  <% end %>
+
+
   <br/><br/><br/>
   <h2>Answers</h2>
-  <% if user_signed_in? %>
-    <%= render :template => 'answers/new' %>
-  <% end %>
+
   <% @question.answers.each do |answer| %>
-  <div class="answer">
-    <p class="answer-body"><%= answer.body %></p>
-    <small class="answer-user">Posted by <%= answer.user.name  unless answer.user.nil? %></small>
-    <% if current_user && current_user.id == answer.user_id %>
-      <%= link_to "Edit Answer", edit_city_question_answer_path(@city, @question, answer) %> | <%= link_to "Delete Answer", city_question_answer_path(@city, @question, answer), :method => 'delete' %>
-    <% end %>
-  </div>
+  <table class="table table-striped">
+    <tr>
+      <td >
+        <%= link_to image_tag("http://elementcreative.com/_assets/img/icon_thumbsup.png", :height => 25), votes_path(:voteable_id => answer.id, :voteable_type => "Answer"), remote: true, method: :post, :class => 'vote-answer' %>
+        <div class="vote-count-answer">
+          <p><%= pluralize(answer.votes.count, 'Vote') %></p>
+        </div>
+        <p class="answer-body"><%= answer.body %></p>
+        <small class="answer-user">Posted by <%= answer.user.name  unless answer.user.nil? %></small>
+        <% if current_user && current_user.id == answer.user_id %>
+        <%= link_to "Edit Answer", edit_city_question_answer_path(@city, @question, answer) %> | <%= link_to "Delete Answer", city_question_answer_path(@city, @question, answer), :method => 'delete' %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+  <% end %>
+
+
+
+
+
+  <br/><br/>
+  <% if user_signed_in? %>
+  <%= render :template => 'answers/new' %>
   <% end %>
 </div>

@@ -1,0 +1,24 @@
+    <nav class=" navbar-default" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="wrapper">
+            <div class="panel-heading">Voted Questions</div>
+            <ul class="nav nav-stacked">
+                <% current_user.voted_questions.each do |question| %>
+                  <% city = City.find(question.city_id) %>
+                  <li><%= link_to question.title, city_question_path(city, question) %></li>
+                <% end %>
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+

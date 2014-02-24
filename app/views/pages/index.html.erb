@@ -13,10 +13,75 @@
 <% end %>
 </div>
 
+<div id="map-canvas" style="width: 90%; height: 400px"></div>
+
 <div class="container">
   <% @cities.each do |city| %>
     <h2><%= link_to city.name, city_path(city) %></h2>
-    <p><%= city.description %></p>
+    <p><%= city.country %></p>
   <% end %>
 </div>
 
+<style type="text/css">
+
+  .profile-pic {
+    width: 40px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .friend a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #map-canvas {
+    margin-top: 20px;
+  }
+
+</style>
+<script>
+ var locations = <%= current_user.all_friend_coords.to_json.html_safe %>;
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+      zoom: 3,
+      center: new google.maps.LatLng(39.0042, -77.019),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (var city in locations) {
+      if(locations.hasOwnProperty(city)){
+        marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[city].info.lat, locations[city].info.long),
+        map: map,
+        friends: locations[city].info.friends
+      });
+      }
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          var friend_html = generate_friend_html(marker)
+          infowindow.setContent(friend_html);//marker.friends.join(', '));
+          infowindow.open(map, marker);
+
+          function generate_friend_html(marker) {
+            var friends = marker.friends;
+            var final_html = "";
+            for(var i=0; i < friends.length; i++){
+
+              final_html += '<div class="friend"><img class="profile-pic" src="'
+              + friends[i].photo_url + '"/><p><a href="http://facbook.com/'
+              + friends[i].id + '">'
+              + friends[i].name + '</a></p></div>';
+            }
+            return final_html;
+          }
+        }
+      })(marker, i));
+    }
+</script>

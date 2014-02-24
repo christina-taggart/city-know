@@ -27,9 +27,9 @@ class AnswersController < ApplicationController
       current_user.answers << @answer
       redirect_to city_question_path(@city, @question)
     else
-      flash.now[:errors] = @answer.errors.full_messages
+      flash[:errors] = @answer.errors.full_messages
       @errors = @city.errors.full_messages
-      render :new
+      redirect_to city_question_path(@city, @question)
     end
   end
 
