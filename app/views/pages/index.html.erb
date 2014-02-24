@@ -42,7 +42,7 @@
 
 </style>
 <script>
- var locations = <%= current_user.all_friend_coords.to_json.html_safe %>;
+ var locations = <%= current_user.all_friend_coords.to_json.html_safe if current_user %>;
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 3,
