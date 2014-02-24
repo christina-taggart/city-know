@@ -8,7 +8,7 @@ gem 'devise'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'omniauth-facebook'
-gem 'koala'
+gem "koala", "~> 1.8.0rc1"
 
 group :assets do
   gem 'uglifier', '>= 1.0.3'

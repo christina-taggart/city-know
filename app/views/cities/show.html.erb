@@ -13,6 +13,7 @@
       <li><%= link_to question.title, city_question_path(@city, question) %></li>
     <% end %>
   </ul>
+<<<<<<< HEAD
 </div>
 
 <script type="text/javascript">
@@ -28,3 +29,16 @@ function initialize() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+=======
+
+
+
+  <h4>Friends in this City </h4>
+  <% current_user.friends_in_city(@city.name).each do |friend| %>
+    <p><%= friend['name'] %></p>
+  <% end %>
+
+
+
+</div>
+>>>>>>> koalaFB

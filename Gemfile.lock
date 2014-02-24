@@ -48,7 +48,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    columnize (0.3.6)
     database_cleaner (1.2.0)
+    debugger (1.6.5)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.3.1)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.3.1)
     devise (3.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -79,7 +86,11 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
+<<<<<<< HEAD
     koala (1.9.0)
+=======
+    koala (1.8.0)
+>>>>>>> koalaFB
       addressable
       faraday
       multi_json
@@ -190,11 +201,16 @@ DEPENDENCIES
   capybara
   coffee-rails
   database_cleaner
+  debugger
   devise
   dotenv-rails
   factory_girl_rails
   jquery-rails
+<<<<<<< HEAD
   koala
+=======
+  koala (~> 1.8.0rc1)
+>>>>>>> koalaFB
   omniauth-facebook
   pg
   rails (= 3.2.13)

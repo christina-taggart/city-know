@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :oauth_token, :oauth_expires_at
   # attr_accessible :title, :body
 
   def voted_questions
@@ -33,7 +33,8 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
-      user.access_token = auth.credentials.token
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       # user.image = auth.info.image # assuming the user model has an image
     end
   end
@@ -47,14 +48,15 @@ class User < ActiveRecord::Base
   end
 
   def facebook
-    @facebook ||= Koala::Facebook::API.new(@access_token)
+    @facebook ||= Koala::Facebook::API.new(oauth_token)
     block_given? ? yield(@facebook) : @facebook
   rescue
     logger.info e.to_s
     nil
   end
 
-  def friends_count
-    #
+  def friends_in_city(city)
+    friend_array = self.facebook.get_connection('me', 'friends?fields=name,location')
+    friend_array.select { |f| f['location']['name'].split(',').first == city if f['location']}
   end
 end
